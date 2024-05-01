@@ -107,11 +107,7 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.122);
 }
 
-.header__menu {
-    width: 60%;
-}
-
-.header__bg-container picture {
+.bg-container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -119,6 +115,18 @@ body {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+    position: relative;
+}
+
+.bg {
+    width: 99vw;
+    max-width: 100rem;
+    z-index: -100;
+    position: absolute;
+}
+
+.header__menu {
+    width: 60%;
 }
 
 .header__container {
@@ -127,13 +135,6 @@ body {
     -ms-flex-direction: row;
     flex-direction: row;
     min-height: 11rem;
-}
-
-.header__bg {
-    width: 99vw;
-    max-width: 100rem;
-    z-index: -100;
-    position: absolute;
 }
 
 .header__container {
@@ -166,8 +167,9 @@ li a {
 }
 
 li a:hover {
-    color: #070707;
-    border-bottom: 1px solid #070707;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    opacity: 1;
 }
 
 li a:after {
@@ -196,11 +198,28 @@ li a:after {
     -ms-flex-pack: justify;
     justify-content: space-between;
     line-height: 2;
-    opacity: 0.9;
     text-decoration: underline;
     border-top: 1px solid rgba(255, 255, 255, 0.459);
     padding: 3rem 0;
     font-weight: 100;
+}
+
+.footer a {
+    color: #fff;
+}
+
+.footer a:visited {
+    color: #fff;
+}
+
+.footer__info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
 }
 
 .footer__container {
@@ -229,7 +248,11 @@ li a:after {
 
 .promo__check-txt {
     font-weight: 400;
-    font-size: 1.25rem;
+    font-size: min(1.3vw, 1.15rem);
+}
+
+.promo__check-title {
+    font-size: min(1.2vw, 1.1rem);
 }
 
 .promo__check-info {
@@ -241,10 +264,8 @@ li a:after {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    padding: 1.5rem 2.5rem;
     position: absolute;
     background: linear-gradient(33deg, rgb(44, 44, 44) 0%, rgba(61, 61, 61, 0.9) 100%);
-    font-size: 1.15rem;
     border-radius: 0.75rem;
 }
 
@@ -359,14 +380,18 @@ li a:after {
     background: linear-gradient(0deg, rgb(122, 184, 194) 0%, rgb(185, 209, 213) 50%, rgb(122, 184, 194) 100%);
 }
 
+.promo__button:nth-child(2):hover {
+    background: -webkit-gradient(linear, left bottom, left top, from(rgb(72, 189, 207)), color-stop(50%, rgb(118, 157, 165)), to(rgb(61, 176, 194)));
+    background: linear-gradient(0deg, rgb(72, 189, 207) 0%, rgb(118, 157, 165) 50%, rgb(61, 176, 194) 100%);
+}
+
 .promo__button-img {
     width: 1rem;
     height: 1.5rem;
 }
 
 .promo__main-img {
-    width: 30rem;
-    height: 50rem;
+    width: 110%;
     position: relative;
 }
 
@@ -375,6 +400,7 @@ li a:after {
 }
 
 .promo__checks-container {
+    width: 50%;
     position: absolute;
     top: 0;
 }
@@ -396,6 +422,10 @@ li a:after {
     color: rgb(255, 255, 255);
     line-height: 1.25;
     font-weight: 100;
+}
+
+.exchanges__bg-container {
+    top: -9rem;
 }
 
 .exchanges__arrows {
@@ -645,6 +675,11 @@ button {
     box-shadow: 0 0.5rem 0 0 rgba(218, 172, 106, 0.004);
 }
 
+button:hover {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(rgb(255, 207, 95)), color-stop(50%, rgb(255, 232, 178)), to(rgb(255, 195, 56)));
+    background-image: linear-gradient(0deg, rgb(255, 207, 95) 0%, rgb(255, 232, 178) 50%, rgb(255, 195, 56) 100%);
+}
+
 .golden-highlight {
     color: rgb(255, 232, 178);
 }
@@ -809,6 +844,19 @@ button {
 
 .programm {
     padding: 5rem;
+}
+
+.programm__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    padding: 0;
+    height: 34rem;
+}
+
+.programm__cards {
+    position: relative;
 }
 
 .programm-card {
@@ -1558,6 +1606,38 @@ button {
 }
 
 @media screen and (min-width: 63rem) {
+    .promo__check {
+        position: absolute;
+    }
+
+    .promo__checks-container picture:nth-child(1) img {
+        z-index: -1;
+        left: 155%;
+        width: 63%;
+        top: 68%;
+    }
+
+    .promo__checks-container picture:nth-child(2) img {
+        width: 62%;
+        top: 41%;
+        left: 26%;
+        z-index: -1;
+    }
+
+    .promo__checks-container picture:nth-child(3) img {
+        z-index: -1;
+        left: 140%;
+        width: 100%;
+        top: 0;
+    }
+
+    .promo__check-info {
+        bottom: 25%;
+        left: 32%;
+        padding: 5.5% 9%;
+        font-size: 1vw;
+    }
+
     .exchanges__body {
         display: grid;
         grid-template-columns: 0.8fr 8.8rem 1fr;
@@ -1592,42 +1672,56 @@ button {
         width: 14rem;
         height: 5.5rem;
     }
-
-    .promo__check-info {
-        bottom: 12.7rem;
-        left: 8rem;
-    }
-
-    .promo__check {
-        position: absolute;
-    }
-
-    .promo__checks-container picture:nth-child(3) img {
-        z-index: -1;
-        left: 21rem;
-        width: 14rem;
-        height: 14rem;
-        top: 2rem;
-    }
-
-    .promo__checks-container picture:nth-child(2) img {
-        width: 10rem;
-        height: 10rem;
-        top: 10rem;
-        left: 4rem;
-        z-index: -1;
-    }
-
-    .promo__checks-container picture:nth-child(1) img {
-        width: 8.8rem;
-        height: 8.8rem;
-        z-index: -1;
-        top: 17rem;
-        left: 23rem;
-    }
 }
 
 @media screen and (max-width: 63rem) {
+    .promo__main-img {
+        width: 95%;
+    }
+
+    .promo__check-title {
+        font-size: 1.15rem;
+    }
+
+    .promo__check-txt {
+        font-size: 1.2rem;
+    }
+
+    .promo__check-info {
+        position: static;
+        padding: 1rem;
+    }
+
+    .promo__check {
+        width: 100%;
+        height: auto;
+    }
+
+    .promo__checks {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .promo__checks-container {
+        padding: 1rem 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        gap: 1rem;
+        position: static;
+    }
+
     .exchanges__subtitle {
         text-align: center;
     }
@@ -1720,7 +1814,11 @@ button {
         align-items: center;
     }
 
-    .title {
+    .promo__checks {
+        margin-top: 2rem;
+    }
+
+    .promo__title {
         font-size: 4rem;
     }
 
@@ -1881,46 +1979,6 @@ button {
 
     .progress__card {
         padding: 2rem;
-    }
-
-    .promo__checks {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .promo__main-img {
-        width: 100%;
-        height: auto;
-    }
-
-    .promo__checks-container {
-        padding: 1rem 0;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        gap: 1rem;
-        position: static;
-    }
-
-    .promo__check-info {
-        position: static;
-        max-width: 22rem;
-    }
-
-    .promo__check {
-        width: 100%;
-        height: auto;
     }
 
     .promo__buttons {
