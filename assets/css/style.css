@@ -330,6 +330,7 @@ li a:after {
     left: 26%;
     padding: 5.5% 9%;
     font-size: 1vw;
+    z-index: 2;
 }
 
 .promo__container {
@@ -458,6 +459,7 @@ li a:after {
     width: 105%;
     position: relative;
     margin-left: -2rem;
+    z-index: 2;
 }
 
 .promo__checks {
@@ -469,6 +471,7 @@ li a:after {
     height: 50%;
     position: absolute;
     top: 0;
+    z-index: 1;
 }
 
 .section-header__title {
@@ -558,66 +561,70 @@ li a:after {
 }
 
 .exchanges__txt {
-    left: 7rem;
-    top: 17rem;
+    left: 1em;
+    top: 3.5em;
     position: absolute;
-    font-size: 4.9rem;
+    font-size: 4.9em;
     font-family: "DAMN";
     text-transform: uppercase;
     line-height: 1.08;
     font-weight: 400;
 }
 
+.exchanges__imgs {
+    position: relative;
+}
+
 .exchanges__imgs picture:nth-child(1) img {
-    left: 3.5rem;
-    width: 7.5rem;
-    height: 5rem;
+    left: 3.5em;
+    width: 7.5em;
+    height: 5em;
     opacity: 0.3;
 }
 
 .exchanges__imgs picture:nth-child(2) img {
-    top: 3.5rem;
-    left: 14rem;
-    width: 4.5rem;
-    height: 4.5rem;
+    top: 3.5em;
+    left: 14em;
+    width: 4.5em;
+    height: 4.5em;
     opacity: 0.5;
 }
 
 .exchanges__imgs picture:nth-child(3) img {
-    top: 10rem;
-    width: 12rem;
-    height: 4.5rem;
+    top: 10em;
+    width: 12em;
+    height: 4.5em;
     opacity: 0.5;
 }
 
 .exchanges__imgs picture:nth-child(4) img {
-    top: 10rem;
-    left: 20rem;
-    width: 4.5rem;
-    height: 4.5rem;
+    top: 10em;
+    left: 20em;
+    width: 4.5em;
+    height: 4.5em;
 }
 
 .exchanges__imgs picture:nth-child(5) img {
-    top: 24rem;
-    left: 4rem;
-    width: 15rem;
-    height: 4.5rem;
+    top: 24em;
+    left: 4em;
+    width: 15em;
+    height: 4.5em;
     opacity: 0.7;
 }
 
 .exchanges__imgs picture:nth-child(6) img {
-    top: 31rem;
-    left: 3rem;
-    width: 6rem;
-    height: 6rem;
+    top: 31em;
+    left: 3em;
+    width: 6em;
+    height: 6em;
     opacity: 0.5;
 }
 
 .exchanges__imgs picture:nth-child(7) img {
-    top: 30rem;
-    left: 14rem;
-    width: 12rem;
-    height: 4.5rem;
+    top: 30em;
+    left: 14em;
+    width: 12em;
+    height: 4.5em;
     opacity: 0.6;
 }
 
@@ -630,6 +637,7 @@ li a:after {
     -ms-flex-direction: column;
     flex-direction: column;
     gap: 1.5rem;
+    padding: 0 1rem;
 }
 
 .exchanges-card {
@@ -1165,7 +1173,7 @@ button:hover {
 }
 
 .types-card:nth-child(2) .types-card__descr {
-    padding: 1.5rem 3rem 4.5rem 2rem;
+    padding-bottom: 4rem;
 }
 
 .types-card:nth-child(2) {
@@ -1173,6 +1181,12 @@ button:hover {
     -webkit-box-direction: reverse;
     -ms-flex-direction: row-reverse;
     flex-direction: row-reverse;
+}
+
+.types-card:nth-child(2) picture {
+    -ms-flex-item-align: start;
+    align-self: start;
+    margin-top: 1.5rem;
 }
 
 .types-card__button {
@@ -1219,6 +1233,7 @@ button:hover {
     flex-direction: column;
     padding: 1.5rem 1rem 2.5rem 2rem;
     width: 25rem;
+    overflow: hidden;
 }
 
 .types-card__img {
@@ -1236,6 +1251,7 @@ button:hover {
     -ms-flex-direction: column;
     flex-direction: column;
     gap: 0.8rem;
+    text-wrap: nowrap;
 }
 
 .types-card__title {
@@ -1261,6 +1277,7 @@ button:hover {
     -ms-flex-align: center;
     align-items: center;
     gap: 1rem;
+    line-height: 1;
 }
 
 .scroll {
@@ -1611,8 +1628,9 @@ button:hover {
 
 .objections-card:nth-child(1) .objections-card__img {
     width: 51em;
-    right: -4em;
+    right: -2em;
     top: -1em;
+    margin-right: 1em;
 }
 
 .objections-card:nth-child(1) .objections-card__objection-img {
@@ -1656,8 +1674,8 @@ button:hover {
 }
 
 .objections-card:nth-child(2) .objections-card__img-container {
-    left: 25em;
-    top: -6em;
+    left: 20em;
+    top: 0;
 }
 
 .objections-card:nth-child(2) .objections-card__img {
@@ -1803,8 +1821,7 @@ button:hover {
         align-items: center;
         -ms-flex-pack: distribute;
         justify-content: space-around;
-        margin-top: 0;
-        margin-right: 0;
+        margin: -2rem -1rem;
     }
 
     .exchanges__arrows img:nth-child(1) {
@@ -1838,8 +1855,8 @@ button:hover {
     }
 
     .exchanges__imgs {
-        width: 26rem;
-        height: 37rem;
+        width: 26em;
+        height: 37em;
     }
 
     .exchanges__body {
@@ -1935,13 +1952,6 @@ button:hover {
         text-align: center;
     }
 
-    .presentation__container {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-    }
-
     .platform__body {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
@@ -1966,9 +1976,58 @@ button:hover {
     .advantages-card:nth-child(4) {
         margin-right: 0;
     }
+
+    .versatility {
+        padding: 3rem 0;
+    }
+
+    .presentation__main-img {
+        height: 30rem;
+        width: 20rem;
+    }
+
+    .presentation__block {
+        position: static;
+        width: 18rem;
+        padding: 1rem 1.5rem;
+        margin-top: -2rem;
+    }
+
+    .presentation__container {
+        max-width: 55rem;
+    }
 }
 
 @media screen and (max-width: 47.9rem) {
+    button {
+        width: 16.5rem;
+        height: 4.5rem;
+    }
+
+    .types-card:nth-child(2) picture {
+        -ms-flex-item-align: center;
+        align-self: center;
+    }
+
+    .types-card__list {
+        text-wrap: wrap;
+    }
+
+    .types-card picture:nth-child(1) {
+        width: 75%;
+    }
+
+    .types-card__img {
+        height: auto;
+    }
+
+    .presentation__container {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
     .tariffs__body {
         grid-template-columns: 1fr;
         width: 80%;
@@ -1996,10 +2055,6 @@ button:hover {
 
     .system {
         padding: 4rem 0 2.5rem;
-    }
-
-    .versatility {
-        padding: 3rem 0;
     }
 
     .installment {
@@ -2134,16 +2189,70 @@ button:hover {
         align-items: center;
         row-gap: 2rem;
     }
+
+    .types-card__descr {
+        padding: 3rem 2.25rem;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        width: auto;
+    }
 }
 
 @media screen and (max-width: 30rem) {
+    button {
+        width: 13.5rem;
+        height: 4rem;
+    }
+
+    .exchanges__imgs {
+        font-size: 12px;
+    }
+
+    .exchanges__arrows img {
+        width: 5rem;
+        height: 1rem;
+    }
+
+    .exchanges__arrows img:nth-child(2) {
+        width: 4rem;
+    }
+
+    .exchanges__arrows img:nth-child(3) {
+        width: 4rem;
+    }
+
+    .objections-card:nth-child(2) .objections-card__img {
+        left: 0;
+    }
+
+    .objections-card:nth-child(2) .objections-card__objection-img {
+        width: 33em;
+    }
+
+    .objections-card__objection-txt {
+        font-size: 1.1em;
+    }
+
+    .types-card picture:nth-child(1) {
+        width: 100%;
+    }
+
+    .types-card__title {
+        font-size: 1.5rem;
+    }
+
+    .types-card__descr {
+        padding: 2rem 1.5rem;
+    }
+
     .installment__banks {
         gap: 0;
         width: 80%;
     }
 
     .title {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .advantages-card__title {
