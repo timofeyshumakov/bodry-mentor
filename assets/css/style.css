@@ -1,3 +1,24 @@
+.promo {
+    background-image: url("../img/bg1.webp");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.exchanges {
+    background-image: url("../img/bg2.webp");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.advantages {
+    background-image: url("../img/bg3.webp");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
 
 @font-face {
     font-style: medium;
@@ -103,23 +124,59 @@ body {
     gap: 1.5rem;
 }
 
+.text {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+
+.text:before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    -webkit-animation: scroll 5s linear infinite;
+    animation: scroll 5s linear infinite;
+}
+
+@-webkit-keyframes scroll {
+    0% {
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+
+    100% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll {
+    0% {
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+
+    100% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+
 .header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.122);
 }
 
-.bg-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 99vw;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    position: relative;
+.bg-container picture {
+    max-width: 100rem;
+    width: 100vw;
+    display: block;
+    margin: 0 auto;
 }
 
 .bg {
-    width: 99vw;
+    width: 99.9%;
     max-width: 100rem;
     z-index: -100;
     position: absolute;
@@ -607,11 +664,7 @@ li a:after {
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
-}
-
-.installment__bank {
-    width: 10rem;
-    height: 10rem;
+    max-width: 66rem;
 }
 
 .installment__banks {
@@ -625,7 +678,18 @@ li a:after {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    width: 50%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     gap: 2.5rem;
+}
+
+.installment__bank {
+    max-width: 100%;
+    max-height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
 }
 
 .installment__descr {
@@ -637,7 +701,7 @@ li a:after {
     -ms-flex-direction: column;
     flex-direction: column;
     gap: 1.5rem;
-    max-width: 32rem;
+    max-width: min(50%, 34rem);
 }
 
 .installment__subtxt span {
@@ -1524,31 +1588,53 @@ button:hover {
     align-items: flex-start;
 }
 
+.objections-card:nth-child(1) .objections-card__img-container {
+    left: -24em;
+}
+
+.objections-card:nth-child(1) .objections-card__container {
+    height: 33em;
+    left: -1em;
+    -ms-flex-item-align: end;
+    align-self: end;
+}
+
 .objections-card:nth-child(1) .objections-card__objection-txt {
     position: absolute;
-    top: 17%;
-    max-width: 18rem;
-    left: 5%;
+    top: 5em;
+    max-width: 11.7em;
+    left: 3em;
+    max-height: 6em;
+    overflow: hidden;
+    font-size: 1.55em;
 }
 
 .objections-card:nth-child(1) .objections-card__img {
-    max-width: 51rem;
-    width: 100%;
-    right: -4%;
-    top: 0;
-    position: absolute;
+    width: 51em;
+    right: -4em;
+    top: -1em;
 }
 
 .objections-card:nth-child(1) .objections-card__objection-img {
-    width: 45%;
+    width: 30em;
 }
 
-.objections-card__objection-subtxt:nth-child(1) {
-    max-width: 27rem;
+.objections-card:nth-child(2) .objections-card__objection-subtxt:nth-child(1) {
+    max-height: 3em;
+    max-width: 16.8em;
+    overflow: hidden;
 }
 
-.objections-card__objection-subtxt:nth-child(2) {
-    max-width: 31rem;
+.objections-card:nth-child(2) .objections-card__objection-subtxt:nth-child(2) {
+    max-height: 6em;
+    max-width: 19.4em;
+    overflow: hidden;
+}
+
+.objections-card:nth-child(2) .objections-card__container {
+    height: 36em;
+    -ms-flex-item-align: start;
+    align-self: start;
 }
 
 .objections-card:nth-child(2) .objections-card__objection-txt {
@@ -1563,45 +1649,46 @@ button:hover {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    top: 6rem;
-    left: 10rem;
-    gap: 1rem;
+    top: 4em;
+    left: 6.5em;
+    gap: 1em;
+    overflow: hidden;
 }
 
 .objections-card:nth-child(2) .objections-card__img-container {
-    left: 17rem;
-    position: absolute;
-    top: -6rem;
+    left: 25em;
+    top: -6em;
 }
 
 .objections-card:nth-child(2) .objections-card__img {
-    position: absolute;
-    height: 36rem;
-    width: 26rem;
-    left: -6rem;
+    height: 36em;
+    left: 2em;
     top: 0;
 }
 
 .objections-card:nth-child(2) .objections-card__objection-img {
-    width: 44rem;
-    height: 25rem;
+    width: 44em;
+}
+
+.objections-card__img {
+    position: absolute;
+}
+
+.objections-card__img-container {
+    position: relative;
 }
 
 .objections-card__objection-txt {
     z-index: 1;
-    color: black;
-    font-size: 1.6rem;
+    color: #1b1b1b;
+    font-size: 1.55em;
     font-weight: 400;
     text-align: center;
-    font-size: min(1.6rem, 3.1vw);
 }
 
 .objections-card__container {
-    width: 100%;
-    height: 34rem;
     position: relative;
-    -ms-flex-item-align: center;
-    align-self: center;
+    font-size: max(min(1vw, 1rem), 0.3rem);
 }
 
 .objections-card {
@@ -1659,7 +1746,6 @@ button:hover {
 
 @media screen and (min-width: 48rem) {
     .installment__banks picture:nth-child(1) img {
-        width: 29rem;
         height: 5rem;
     }
 
@@ -1669,13 +1755,15 @@ button:hover {
     }
 
     .installment__banks picture:nth-child(3) img {
-        width: 19rem;
+        max-width: 80%;
+        -webkit-transform: translate(14%, 0%);
+        -ms-transform: translate(14%, 0%);
+        transform: translate(14%, 0%);
         height: 4rem;
     }
 
     .installment__banks picture:nth-child(4) img {
-        width: 14rem;
-        height: 5.5rem;
+        height: 4rem;
     }
 }
 
@@ -1819,11 +1907,6 @@ button:hover {
         width: 80%;
     }
 
-    .tariffs__body {
-        grid-template-columns: 1fr;
-        width: 80%;
-    }
-
     .types-card__img {
         width: 100%;
         border-radius: 1.25rem;
@@ -1886,6 +1969,11 @@ button:hover {
 }
 
 @media screen and (max-width: 47.9rem) {
+    .tariffs__body {
+        grid-template-columns: 1fr;
+        width: 80%;
+    }
+
     .advantages {
         padding-top: 3rem;
     }
@@ -1984,10 +2072,22 @@ button:hover {
     }
 
     .installment__descr {
+        max-width: 100%;
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
         text-align: center;
+    }
+
+    .installment__banks {
+        gap: 1rem;
+    }
+
+    .installment__banks picture:nth-child(4) img {
+        height: 4rem;
+        -webkit-transform: translate(0%, 0);
+        -ms-transform: translate(0%, 0);
+        transform: translate(0%, 0);
     }
 
     .installment__banks img {
@@ -2037,6 +2137,15 @@ button:hover {
 }
 
 @media screen and (max-width: 30rem) {
+    .installment__banks {
+        gap: 0;
+        width: 80%;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
     .advantages-card__title {
         font-size: 1.5rem;
     }
