@@ -399,7 +399,7 @@ li a:after {
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
-    gap: 0;
+    gap: 2rem;
     padding: 0 4rem 0 2rem;
 }
 
@@ -827,8 +827,6 @@ li a:after {
 }
 
 button:not(.progress__button) {
-    width: 19.5rem;
-    height: 5rem;
     font-size: 1.15rem;
     font-weight: bold;
     border-radius: 0.3rem;
@@ -2013,7 +2011,18 @@ button:hover:not(.progress__button) {
     }
 }
 
+@media screen and (min-width: 48rem) {
+    button:not(.progress__button) {
+        width: 19.5rem;
+        height: 5rem;
+    }
+}
+
 @media screen and (max-width: 63rem) {
+    .promo__checks-container picture:nth-child(1) img {
+        left: 164%;
+    }
+
     .answer__card {
         gap: 0;
     }
@@ -2252,7 +2261,7 @@ button:hover:not(.progress__button) {
         margin-top: 0;
     }
 
-    button {
+    button:not(.progress__button) {
         width: 16.5rem;
         height: 4.5rem;
     }
@@ -2476,6 +2485,10 @@ button:hover:not(.progress__button) {
 }
 
 @media screen and (max-width: 30rem) {
+    .promo__checks-container picture:nth-child(1) img {
+        left: 156%;
+    }
+
     .promo__checks-container picture:nth-child(3) img {
         left: 124%;
     }
@@ -2497,7 +2510,7 @@ button:hover:not(.progress__button) {
         font-size: 0.9rem;
     }
 
-    button {
+    button:not(.progress__button) {
         width: 13.5rem;
         height: 4rem;
         font-size: 0.9rem;
