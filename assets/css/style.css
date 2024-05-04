@@ -1,30 +1,36 @@
-.promo {
-    background-image: url("../img/bg1.webp");
+.header {
+    background-image: url(../img/bg1.webp);
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    max-width: 100rem;
+}
+
+.promo {
+    background-image: url(../img/bg1.webp);
 }
 
 .exchanges {
-    background-image: url("../img/bg2.webp");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-image: url(../img/bg2.webp);
 }
 
 .advantages {
-    background-image: url("../img/bg2.webp");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-image: url(../img/bg2.webp);
+}
+
+.types {
+    background-image: url(../img/bg1.webp);
+}
+
+.system {
+    background-image: url(../img/bg2.webp);
+}
+
+.versatility {
+    background-image: url(../img/bg1.webp);
 }
 
 .tariffs {
-    background-image: url("../img/bg2.webp");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    padding-bottom: 6rem;
+    background-image: url(../img/bg2.webp);
 }
 
 
@@ -128,7 +134,6 @@ section {
     width: 100vw;
     max-width: 100rem;
     position: relative;
-    background-image: url("../img/bg1.webp");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -339,7 +344,7 @@ li a:after {
 .decor-txt {
     position: absolute;
     width: 100%;
-    font-size: 20rem;
+    font-size: 20vw;
     font-family: "DAMN";
     text-transform: uppercase;
     left: 0;
@@ -350,7 +355,7 @@ li a:after {
 }
 
 .promo__decor-txt {
-    top: 18rem;
+    top: 14vw;
 }
 
 .promo__light-center {
@@ -416,7 +421,7 @@ li a:after {
     -ms-flex-direction: column;
     flex-direction: column;
     gap: 3rem;
-    max-width: 40rem;
+    max-width: 41.1rem;
 }
 
 .promo__top-title-blocks {
@@ -720,7 +725,7 @@ li a:after {
 }
 
 .main__installment {
-    padding-bottom: 4rem;
+    padding: 6rem 0 4rem;
 }
 
 .installment__decor {
@@ -821,7 +826,7 @@ li a:after {
     text-align: center;
 }
 
-button {
+button:not(.progress__button) {
     width: 19.5rem;
     height: 5rem;
     font-size: 1.15rem;
@@ -833,7 +838,7 @@ button {
     box-shadow: 0 0.5rem 0 0 rgba(218, 172, 106, 0.004);
 }
 
-button:hover {
+button:hover:not(.progress__button) {
     background-image: -webkit-gradient(linear, left bottom, left top, from(rgb(255, 207, 95)), color-stop(50%, rgb(255, 232, 178)), to(rgb(255, 195, 56)));
     background-image: linear-gradient(0deg, rgb(255, 207, 95) 0%, rgb(255, 232, 178) 50%, rgb(255, 195, 56) 100%);
 }
@@ -1026,7 +1031,6 @@ button:hover {
     display: flex;
     overflow: hidden;
     padding: 0;
-    height: 34rem;
 }
 
 .programm__cards {
@@ -1434,11 +1438,32 @@ button:hover {
     margin-top: 1rem;
 }
 
+.scroll-point:first-child {
+    background-color: rgb(255, 232, 178);
+}
+
 .scroll-point {
     border-radius: 50%;
     background-color: #fff;
     width: 0.75rem;
     height: 0.75rem;
+}
+
+.progress__container {
+    max-width: 100rem;
+}
+
+.progress__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    width: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .progress__card {
@@ -1454,6 +1479,21 @@ button:hover {
     width: 100%;
     padding: 4rem;
     border-radius: 1.25rem;
+}
+
+.progress__arrow {
+    height: 2.25rem;
+    width: 1rem;
+}
+
+.progress__button {
+    background: transparent;
+}
+
+#rotate {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 
 .progress-card__img {
@@ -1773,29 +1813,64 @@ button:hover {
     color: rgb(255, 232, 178);
 }
 
-.objections {
-    padding-top: 6rem;
+.objection__object {
+    position: absolute;
+    width: 34vw;
+    bottom: 0;
+    height: 22vw;
 }
 
-.objections__container {
-    gap: 5rem;
+.answer__object {
+    position: absolute;
+    width: 50vw;
+    bottom: 0;
+    right: 0;
+    height: 30vw;
+}
+
+.objection {
+    background-image: url(../img/bg1.webp);
+    padding-top: min(10vw, 6rem);
+}
+
+.answer {
+    background-image: url(../img/bg2.png);
+    padding-top: min(10vw, 6rem);
+}
+
+.objection__card {
+    width: 51em;
+    right: -2em;
+    top: -1em;
+    margin-right: 1em;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
+    gap: 2rem;
 }
 
-.objections-card:nth-child(1) .objections-card__img-container {
-    left: -26em;
-}
-
-.objections-card:nth-child(1) .objections-card__container {
+.objection-card__container {
     height: 33em;
     left: -1em;
     -ms-flex-item-align: end;
     align-self: end;
+    position: relative;
+    font-size: min(1vw, 1rem);
 }
 
-.objections-card:nth-child(1) .objections-card__objection-txt {
+.objection-card__objection-img {
+    width: 30em;
+}
+
+.objection-card__objection-txt {
     position: absolute;
     top: 5em;
     max-width: 11.7em;
@@ -1803,38 +1878,69 @@ button:hover {
     max-height: 6em;
     overflow: hidden;
     font-size: 1.55em;
+    z-index: 1;
+    color: #1b1b1b;
+    font-size: 1.55em;
+    font-weight: 400;
+    text-align: center;
 }
 
-.objections-card:nth-child(1) .objections-card__img {
+.objection-card__img {
     width: 51em;
     right: -2em;
     top: -1em;
     margin-right: 1em;
+    position: absolute;
 }
 
-.objections-card:nth-child(1) .objections-card__objection-img {
-    width: 30em;
+.objection-card__img-container {
+    left: -26em;
+    position: relative;
 }
 
-.objections-card:nth-child(2) .objections-card__objection-subtxt:nth-child(1) {
-    max-height: 3em;
-    max-width: 16.8em;
-    overflow: hidden;
+.answer-card__answer-img {
+    width: 44em;
 }
 
-.objections-card:nth-child(2) .objections-card__objection-subtxt:nth-child(2) {
-    max-height: 6em;
-    max-width: 19.4em;
-    overflow: hidden;
+.answer-card__img-container {
+    left: 25em;
+    top: -6em;
+    position: relative;
 }
 
-.objections-card:nth-child(2) .objections-card__container {
+.answer-card__container {
     height: 36em;
     -ms-flex-item-align: start;
     align-self: start;
+    position: relative;
+    font-size: min(1vw, 1rem);
 }
 
-.objections-card:nth-child(2) .objections-card__objection-txt {
+.answer__card {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    gap: 2rem;
+    position: relative;
+    font-size: min(1vw, 1rem);
+}
+
+.answer-card__img {
+    height: 36em;
+    left: 2em;
+    top: 0;
+    position: absolute;
+}
+
+.answer-card__answer-txt {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1850,32 +1956,6 @@ button:hover {
     left: 6.5em;
     gap: 1em;
     overflow: hidden;
-}
-
-.objections-card:nth-child(2) .objections-card__img-container {
-    left: 25em;
-    top: -6em;
-}
-
-.objections-card:nth-child(2) .objections-card__img {
-    height: 36em;
-    left: 2em;
-    top: 0;
-}
-
-.objections-card:nth-child(2) .objections-card__objection-img {
-    width: 44em;
-}
-
-.objections-card__img {
-    position: absolute;
-}
-
-.objections-card__img-container {
-    position: relative;
-}
-
-.objections-card__objection-txt {
     z-index: 1;
     color: #1b1b1b;
     font-size: 1.55em;
@@ -1883,24 +1963,16 @@ button:hover {
     text-align: center;
 }
 
-.objections-card__container {
-    position: relative;
-    font-size: max(min(1vw, 1rem), 0.3rem);
+.answer-card__answer-subtxt:nth-child(1) {
+    max-height: 3em;
+    max-width: 16.8em;
+    overflow: hidden;
 }
 
-.objections-card {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    gap: 2rem;
+.answer-card__answer-subtxt:nth-child(2) {
+    max-height: 6em;
+    max-width: 19.4em;
+    overflow: hidden;
 }
 
 .promo__check {
@@ -1909,7 +1981,7 @@ button:hover {
 }
 
 .promo__checks-container picture:nth-child(1) img {
-    left: 152%;
+    left: 150%;
     width: 60%;
     top: 70%;
 }
@@ -1942,6 +2014,10 @@ button:hover {
 }
 
 @media screen and (max-width: 63rem) {
+    .answer__card {
+        gap: 0;
+    }
+
     .promo__check-info {
         position: static;
         -webkit-box-align: center;
@@ -2161,13 +2237,13 @@ button:hover {
     .presentation__container {
         max-width: 55rem;
     }
-
-    .promo__checks-container picture:nth-child(1) img {
-        left: 160%;
-    }
 }
 
 @media screen and (max-width: 47.9rem) {
+    .decor-txt {
+        display: none;
+    }
+
     .progress-card__img {
         width: 10rem;
     }
@@ -2239,7 +2315,7 @@ button:hover {
     }
 
     .system {
-        padding: 4rem 0 2.5rem;
+        padding: 2.5rem 0 2.5rem;
     }
 
     .installment {
@@ -2388,7 +2464,7 @@ button:hover {
 
     .platform-card__header {
         width: 80%;
-        padding-top: 6rem 3.5rem 2.5rem;
+        padding: 6rem 3.5rem 2.5rem;
         gap: 0.5rem;
     }
 }
@@ -2400,6 +2476,10 @@ button:hover {
 }
 
 @media screen and (max-width: 30rem) {
+    .promo__checks-container picture:nth-child(3) img {
+        left: 124%;
+    }
+
     .platform-card__img {
         height: 10rem;
     }
@@ -2410,7 +2490,7 @@ button:hover {
 
     .platform-card__header {
         width: 100%;
-        padding: 3rem 1.5rem 2rem;
+        padding: 4rem 1.5rem 2rem;
     }
 
     .system-card__footer-button {
@@ -2440,26 +2520,6 @@ button:hover {
         width: 4rem;
     }
 
-    .objections-card:nth-child(2) .objections-card__img {
-        left: 0;
-    }
-
-    .objections-card:nth-child(2) .objections-card__objection-img {
-        width: 33em;
-    }
-
-    .objections-card {
-        gap: 0;
-    }
-
-    .objections-card:nth-child(2) .objections-card__objection-txt {
-        left: 6em;
-    }
-
-    .objections-card__objection-txt {
-        font-size: 1.2em;
-    }
-
     .types-card picture:nth-child(1) {
         width: 100%;
     }
@@ -2478,7 +2538,7 @@ button:hover {
     }
 
     .title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .advantages-card__title {
