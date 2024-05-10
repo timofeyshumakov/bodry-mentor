@@ -60,52 +60,54 @@
     font-style: medium;
   font-weight: 400;
   font-display: swap;
-  font-family: "Helvetica";
-  src: local("Helvetica-regular");
-  src: url("../fonts/Helvetica-Regular.woff2") format("woff2");
-  src: url("../fonts/Helvetica-Regular.woff") format("woff");
-  src: url("../fonts/Helvetica-Regular.woff") format("ttf");
+  font-family: "helvetica";
+  src: local("helvetica-regular");
+  src: url("../fonts/helvetica-regular.woff2") format("woff2");
+  src: url("../fonts/helvetica-regular.woff") format("woff");
+  src: url("../fonts/helvetica-regular.woff") format("ttf");
 }
 
 @font-face {
     font-style: bold;
   font-weight: 700;
   font-display: swap;
-  font-family: "Helvetica";
-  src: local("Helvetica-bold");
-  src: url("../fonts/Helvetica-bold.woff2") format("woff2");
-  src: url("../fonts/Helvetica-bold.woff") format("woff");
-  src: url("../fonts/Helvetica-bold.woff") format("ttf");
+  font-family: "helvetica";
+  src: local("helvetica-bold");
+  src: url("../fonts/helvetica-bold.woff2") format("woff2");
+  src: url("../fonts/helvetica-bold.woff") format("woff");
+  src: url("../fonts/helvetica-bold.woff") format("ttf");
 }
 
 @font-face {
     font-style: light;
   font-weight: 100;
   font-display: swap;
-  font-family: "Helvetica";
-  src: local("Helvetica-light");
-  src: url("../fonts/Helvetica-light.woff2") format("woff2");
-  src: url("../fonts/Helvetica-light.woff") format("woff");
-  src: url("../fonts/Helvetica-light.woff") format("ttf");
+  font-family: "helvetica";
+  src: local("helvetica-light");
+  src: url("../fonts/helvetica-light.woff2") format("woff2");
+  src: url("../fonts/helvetica-light.woff") format("woff");
+  src: url("../fonts/helvetica-light.woff") format("ttf");
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #5D50C6;
+    background-color: #1b1b1b;
 }
 
 ::-webkit-scrollbar-thumb {
     border-radius: 0.5rem;
-    background-color: #5D50C6;
+    background-color: rgb(255, 232, 178);
+    height: 7rem;
 }
 
 ::-webkit-scrollbar-thumb:active {
-    background-color: #5D50C6;
-    border: 0.1rem solid #5D50C6;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(rgb(255, 207, 95)), color-stop(50%, rgb(255, 232, 178)), to(rgb(255, 195, 56)));
+    background-image: linear-gradient(0deg, rgb(255, 207, 95) 0%, rgb(255, 232, 178) 50%, rgb(255, 195, 56) 100%);
+    border: 0.1rem solid rgb(255, 232, 178);
 }
 
 ::-webkit-scrollbar {
     width: 0.6rem;
-    background-color: #5D50C6;
+    background-color: rgb(255, 232, 178);
 }
 
 
@@ -1617,7 +1619,7 @@ button:hover:not(.progress__button) {
 
 .system-card__txt {
     font-size: 1rem;
-    font-family: "Helvetica";
+    font-family: "helvetica";
     color: rgb(255, 255, 255);
     line-height: 1.5;
     max-width: 23rem;
