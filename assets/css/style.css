@@ -35,25 +35,25 @@
 
 
 @font-face {
-    font-style: medium;
+    font-style: normal;
   font-weight: 400;
   font-display: swap;
   font-family: "DrukCyr";
   src: local("DrukCyr-medium");
   src: url("../fonts/DrukCyr-medium.woff2") format("woff2");
   src: url("../fonts/DrukCyr-medium.woff") format("woff");
-  src: url("../fonts/DrukCyr-medium.woff") format("ttf");
+  src: url("../fonts/DrukCyr-medium.ttf") format("truetype");
 }
 
 @font-face {
-    font-style: medium;
+    font-style: normal;
   font-weight: 400;
   font-display: swap;
   font-family: "DAMN";
   src: local("DAMN");
   src: url("../fonts/DAMN.woff2") format("woff2");
   src: url("../fonts/DAMN.woff") format("woff");
-  src: url("../fonts/DAMN.woff") format("ttf");
+  src: url("../fonts/DAMN.ttf") format("truetype");
 }
 
 @font-face {
@@ -64,7 +64,7 @@
   src: local("helvetica-regular");
   src: url("../fonts/helvetica-regular.woff2") format("woff2");
   src: url("../fonts/helvetica-regular.woff") format("woff");
-  src: url("../fonts/helvetica-regular.woff") format("ttf");
+  src: url("../fonts/helvetica-regular.ttf") format("truetype");
 }
 
 @font-face {
@@ -75,18 +75,18 @@
   src: local("helvetica-bold");
   src: url("../fonts/helvetica-bold.woff2") format("woff2");
   src: url("../fonts/helvetica-bold.woff") format("woff");
-  src: url("../fonts/helvetica-bold.woff") format("ttf");
+  src: url("../fonts/helvetica-bold.ttf") format("truetype");
 }
 
 @font-face {
-    font-style: light;
+    font-style: normal;
   font-weight: 100;
   font-display: swap;
   font-family: "helvetica";
   src: local("helvetica-light");
   src: url("../fonts/helvetica-light.woff2") format("woff2");
   src: url("../fonts/helvetica-light.woff") format("woff");
-  src: url("../fonts/helvetica-light.woff") format("ttf");
+  src: url("../fonts/helvetica-light.ttf") format("ttf");
 }
 
 ::-webkit-scrollbar-track {
