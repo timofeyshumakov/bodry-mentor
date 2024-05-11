@@ -86,7 +86,7 @@
   src: local("helvetica-light");
   src: url("../fonts/helvetica-light.woff2") format("woff2");
   src: url("../fonts/helvetica-light.woff") format("woff");
-  src: url("../fonts/helvetica-light.ttf") format("ttf");
+  src: url("../fonts/helvetica-light.ttf") format("truetype");
 }
 
 ::-webkit-scrollbar-track {
