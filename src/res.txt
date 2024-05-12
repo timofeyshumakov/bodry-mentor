@@ -1,0 +1,16 @@
+-i = 0
+      each card in [['Знаю, сейчас вы скажете:', 'Облако_1', 'Но я не умею работать с Битрикс24. Это не моя специализация...', 'Человек_1'], ['А я отвечу:', 'Облако_2', ' ', '3']]
+        div(class=`${sectionName}__` + 'card' + ` ${sectionName}-card`)
+          -bemBlock = `${sectionName}-card__`
+          h2(class=`${sectionName}__` + 'title' + ' title')= card[0]
+          div(class=`${bemBlock}` + 'container') 
+            div(class=`${bemBlock}` + 'img-container')
+              +img(`${bemBlock}` + 'objection-img', `objections/${card[1]}`, format)
+              if i === 0
+                div(class=`${bemBlock}` + 'objection-txt')= card[2]
+              else
+                div(class=`${bemBlock}` + 'objection-txt')
+                  div(class=`${bemBlock}` + 'objection-subtxt') Это нетрудно, нужно просто понять принцип работы Битрикс24.
+                  div(class=`${bemBlock}` + 'objection-subtxt') как только поймете, сможете выстроить очередь из клиентов. И вас будут звать во многие компании в качестве веб-разработчика в штат.
+            +img(`${bemBlock}` + 'img', `objections/${card[3]}`)
+            -i++

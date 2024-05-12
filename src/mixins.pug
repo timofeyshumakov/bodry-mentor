@@ -1,0 +1,165 @@
+mixin img(className,src,format,alt,loading,tabIndex)
+  if format!== 'svg'
+    picture
+      source(srcset=`assets/img/${src}.webp` type="image/webp")
+      if alt!==' '
+        if tabIndex === 0
+          if loading === 'l'
+            img(class=`${className}` src=`assets/img/${src}.${format}` alt=`${alt}` title=`${alt}` loading="lazy" tabindex="0")
+          else
+            img(class=`${className}` src=`assets/img/${src}.${format}` alt=`${alt}` title=`${alt}` tabindex="0")
+        else
+          if loading === 'l'
+            img(class=`${className}` src=`assets/img/${src}.${format}` alt=`${alt}` title=`${alt}` loading="lazy")
+          else
+            img(class=`${className}` src=`assets/img/${src}.${format}` alt=`${alt}` title=`${alt}`)
+      else
+        if tabIndex === 0
+          if loading === 'l'
+            img(class=`${className}` src=`assets/img/${src}.${format}` alt=" " loading="lazy" tabindex="0")
+          else
+            img(class=`${className}` src=`assets/img/${src}.${format}` alt=" " tabindex="0")
+        else
+          if loading === 'l'
+            img(class=`${className}` src=`assets/img/${src}.${format}` alt=" " loading="lazy")
+          else
+            img(class=`${className}` src=`assets/img/${src}.${format}` alt=" ")
+  else
+    if alt!==' '
+      if tabIndex === 0
+        if loading === 'l'
+          img(class=`${className}` src=`assets/img/${src}.svg` alt=`${alt}` title=`${alt}` loading="lazy" tabindex="0")
+        else
+          img(class=`${className}` src=`assets/img/${src}.svg` alt=`${alt}` title=`${alt}` tabindex="0")
+      else
+        if loading === 'l'
+          img(class=`${className}` src=`assets/img/${src}.svg` alt=`${alt}` title=`${alt}` loading="lazy")
+        else
+          img(class=`${className}` src=`assets/img/${src}.svg` alt=`${alt}` title=`${alt}`)
+    else
+      if tabIndex === 0
+        if loading === 'l'
+          img(class=`${className}` src=`assets/img/${src}.svg` alt=" " loading="lazy" tabindex="0")
+        else
+          img(class=`${className}` src=`assets/img/${src}.svg` alt=" " tabindex="0")
+      else
+        if loading === 'l'
+          img(class=`${className}` src=`assets/img/${src}.svg` alt=" " loading="lazy")
+        else
+          img(class=`${className}` src=`assets/img/${src}.svg` alt=" ")
+mixin linkButton(className,caption,link,target)
+  form(action=`${link}`) 
+    if target !== undefineted
+      button(class=`${className}` target=`${target}`)= caption
+    else
+      button(class=`${className}`)= caption
+mixin actionButton(className,caption,id)
+  if id !== ' '
+    button(class=`${className}` id= id)= caption
+  else
+    button(class=`${className}`)= caption
+mixin logo(bemBlock)
+  -newBlock = 'logo'
+  div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+    +img(`${newBlock}` + '-img', 'logo', 'svg', 'logo')
+    div(class=`${newBlock}` + '-txt') Acc Pool
+
+mixin column(colTitle,colTxt,bemBlock)
+  -newBlock = 'column'
+  div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+    -colTitle.forEach(function callback(val, index) {
+      -bemBlock = `${newBlock}__`
+      div(class=`${bemBlock}` + 'block')
+        div(class=`${bemBlock}` + 'title')=colTitle[index]
+        div(class=`${bemBlock}` + 'txt')=colTxt[index]
+      if index === 0
+        span(class=`${bemBlock}` + 'line')
+    -});
+
+mixin columnCenter(colTitle, colTxt, colTitle2, bemBlock)
+  -newBlock = 'column'
+  div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+    -colTitle.forEach(function callback(val, index) {
+      -bemBlock = `${newBlock}__`
+      div(class=`${bemBlock}` + 'block')
+        div(class=`${bemBlock}` + 'title')=colTitle[index]
+        div(class=`${bemBlock}` + 'txt')=colTxt[index]
+        div(class=`${bemBlock}` + 'title')=colTitle2[index]
+        +img(`${bemBlock}` + 'img', 'get_started', 'svg')
+    -});
+
+mixin columnNews(colTitleTop, colTitle, colTxt, bemBlock)
+  -newBlock = 'column'
+  div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+    -colTitle.forEach(function callback(val, index) {
+      -bemBlock = `${newBlock}__`
+      div(class=`${bemBlock}` + 'block')
+        div(class=`${bemBlock}` + 'title-top')=colTitleTop[index]
+        div(class=`${bemBlock}` + 'title')=colTitle[index]
+        div(class=`${bemBlock}` + 'txt')=colTxt[index]
+    -});
+
+mixin decor(sectionName)
+  -newBlock = 'decor'
+  -bemBlock = `${sectionName}__`
+  div(class=`${bemBlock}` + 'decor-container')
+    div(class=`${bemBlock}` + newBlock)
+    div(class=`${bemBlock}` + newBlock)
+    div(class=`${bemBlock}` + newBlock)
+
+mixin socials(socialsLogo, socialsName, socialsLink, bemBlock)
+  -newBlock = 'socials'
+    div(class=`${bemBlock}` + newBlock)
+      -socialsLogo.forEach(function callback(val, index) {
+      -newBlock = 'social'
+      div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+        -bemBlock = `${newBlock}__`
+        +img(`${bemBlock}` + 'logo', `socials/${socialsLogo[index]}`, 'svg')
+        div(class=`${bemBlock}` + 'info')
+          div(class=`${bemBlock}` + 'title')=socialsName[index]
+          div(class=`${bemBlock}` + 'txt')=socialsLink[index]
+        +img(`${bemBlock}` + 'arrow', `icons/arrow`, 'svg')
+      -});
+
+mixin pagination(bemBlock)
+  -newBlock = 'pagination'
+  div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+    -bemBlock = `${newBlock}__`
+    +img(`${bemBlock}` + 'img' + ' arrow', `icons/arrow-black`, 'svg')
+    -for( i = 1; i < 6; i++){
+      div(class=`${bemBlock}` + 'number')=i
+    -}
+    div(class=`${bemBlock}` + 'ellipsis') ...
+    +img(`${bemBlock}` + 'img' + ' arrow', `icons/arrow-black`, 'svg')
+
+mixin header(title, subtitle, bemBlock)
+  -newBlock = 'section-header'
+  div(class=`${bemBlock}` + 'section-header')
+    -bemBlock = `${newBlock}__`
+    div(class=`${bemBlock}` + 'title')= title
+    if subtitle !== ''
+      div(class=`${bemBlock}` + 'subtitle')= subtitle
+
+mixin exchanges-card(title, txt, bemBlock)
+  -newBlock = 'exchanges-card'
+  div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+    -bemBlock = `${newBlock}__`
+    div(class=`${bemBlock}` + 'title')= title
+    div(class=`${bemBlock}` + 'txt')= txt
+  
+mixin tariff(title,list,price,bemBlock)
+  -newBlock = 'tariff'
+  div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+    -bemBlock = `${newBlock}__`
+    div(class=`${bemBlock}` + 'container')
+    +img(`${bemBlock}` + 'light-center' + ' light', 'light/center', 'svg')
+    div(class=`${bemBlock}` + 'title') #{title} <p>наставничество</p> 
+    div(class=`${bemBlock}` + 'body')
+      ul(class=`${bemBlock}` + 'list')
+        each item in list
+          li(class=`${bemBlock}` + 'list-item')= item
+      div(class=`${bemBlock}` + 'footer')
+        div(class=`${bemBlock}` + 'price')
+          div(class=`${bemBlock}` + 'new-price')= price[0]
+          div(class=`${bemBlock}` + 'old-price')= price[1]
+        +linkButton(`${bemBlock}` + 'button' + ' default-button', 'Купить', '#') 

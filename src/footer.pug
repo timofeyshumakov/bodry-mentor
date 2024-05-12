@@ -1,0 +1,11 @@
+include mixins.pug
+-sectionName= 'footer'
+-bemBlock = `${sectionName}__`
+footer(class=`${sectionName}`)
+  -newBlock = 'container'
+  div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+    div(class=`${bemBlock}` + 'info')
+      a(class=`${bemBlock}` + 'link' href="#") Политика конфиденциальности 
+      a(class=`${bemBlock}` + 'link' href="#") Договор оферты
+    a(class=`${bemBlock}` + 'link' href="#header") Наверх
+

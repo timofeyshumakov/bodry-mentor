@@ -1,0 +1,19 @@
+include mixins.pug
+doctype html
+html(lang="ru")
+  head
+    meta(charset='UTF-8')
+    meta(name='format-detection' content="telephone=yes")
+    meta(name="robots" content="")
+    meta(name="keywords" content="")
+    meta(name="description" content="")
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='icon' type='image/x-icon' href='assets/img/common/logo.svg')
+    title landing
+    link(rel='stylesheet' href='assets/css/style.css')
+    link(rel='stylesheet' href='assets/css/reset.css')
+  body
+    .wrapper
+      include header.pug
+      include main.pug
+      include footer.pug
