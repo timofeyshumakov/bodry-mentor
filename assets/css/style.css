@@ -2593,7 +2593,11 @@ button:hover:not(.scroll-button) {
         width: 14rem;
     }
 
-    .light {
+    .promo__light-left {
+        z-index: 0;
+     }
+
+    .promo__light-right {
         z-index: 0;
      }
 
