@@ -504,6 +504,7 @@ li a:after {
     width: 16.8rem !important;
     height: 4.5rem;
     gap: 1.2rem;
+    z-index: 50;
 }
 
 .promo__buttons form:nth-child(2) button {
