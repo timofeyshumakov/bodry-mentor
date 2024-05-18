@@ -478,7 +478,7 @@ li a:after {
     display: -ms-flexbox;
     display: flex;
     gap: 2rem;
-.   z-index: 50;
+    z-index: 50;
 }
 
 .promo__button {
