@@ -2593,6 +2593,10 @@ button:hover:not(.scroll-button) {
         width: 14rem;
     }
 
+    .light {
+        z-index: 0;
+     }
+
     .promo__top-title-blocks {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
