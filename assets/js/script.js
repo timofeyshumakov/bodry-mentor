@@ -52,47 +52,35 @@ function nextProgressCard() {
 // Флаг, который указывает на то, что элемент зажат
 let isElementClicked = false;
 let ff = 0;
-// Обработчик нажатия кнопки мыши
-progressSlider.addEventListener('touchstart', function(e) {
+let ss = 0;
+let posX = 0;
+
+progressSlider.addEventListener('mousedown', function(e) {
+  ss = e.pageX;
+  isElementClicked = true;
+  progressCards[currentProgressCard].style.cursor = 'grabbing';
   
-  ss = e.x;
+});
+progressSlider.addEventListener('touchstart', function(e) {
+  ss = e.touches[0].pageX;
   isElementClicked = true;
   progressCards[currentProgressCard].style.cursor = 'grabbing';
 });
 
-// Обработчик отпускания кнопки мыши
-progressSlider.addEventListener('touchmove mousemove', function(e) {
-  if(e.type === 'touchstart'){
-    posX = e.touches[0].x;
-  }else{
-    posX = e.x;
-  }
-  alert(posX);
-    ff = ss - posX;
-    if(ff > 100){
-        nextProgressCard();
-    }else if(ff > 100){
-      previousProgressCard();
-    }else{
-        progressCards[currentProgressCard].style.transform = ip;
-        if(currentProgressCard < progressCards.length - 1){
-          progressCards[currentProgressCard + 1].style.transform = ip;
-        }else{
-          progressCards[0].style.transform = ip;
-        }
-        
-    }
-    
-  isElementClicked = false;
-  progressCards[0].style.cursor = 'grab';
+progressSlider.addEventListener('mousemove', function(e) {
+  posX = e.pageX;
+  move();
+});
+progressSlider.addEventListener('touchmove', function(e) {
+    posX = e.touches[0].pageX;
+
+    move();
 });
 
-// Обработчик передвижения мыши
-progressSlider.addEventListener('touchend', function(e) {
- 
+function move(){
   if(isElementClicked){
     cw = progressSlider.offsetWidth;
-    p = currentProgressCard * 100 + ((ss - e.x) / cw) * 100;
+    p = currentProgressCard * 100 + ((ss - posX) / cw) * 100;
     progressCards[currentProgressCard].style.transform = `translateX(-${p}%)`;
     if(currentProgressCard < progressCards.length - 1){
       progressCards[currentProgressCard + 1].style.transform = `translateX(-${p}%)`;
@@ -100,6 +88,34 @@ progressSlider.addEventListener('touchend', function(e) {
       progressCards[0].style.transform = `translateX(${progressCards.length * 100 - p}%)`;
     }
   }
+}
+    function slider(){
+      ff = ss - posX;
+      
+      if(ff > 100){
+          nextProgressCard();
+      }else if(ff < -100){
+        previousProgressCard();
+      }else{
+          progressCards[currentProgressCard].style.transform = ip;
+          if(currentProgressCard < progressCards.length - 1){
+            progressCards[currentProgressCard + 1].style.transform = ip;
+          }else{
+            progressCards[0].style.transform = ip;
+          }
+          
+      }
+      isElementClicked = false;
+      progressCards[0].style.cursor = 'grab';
+    }
+
+    
+    progressSlider.addEventListener('mouseup', function(e) {
+      slider();
+    });
+// Обработчик передвижения мыши
+progressSlider.addEventListener('touchend', function(e) {
+  slider();
 });
 
 function previousProgrammCard() {
