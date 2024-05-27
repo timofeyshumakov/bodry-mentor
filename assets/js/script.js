@@ -53,7 +53,7 @@ function nextProgressCard() {
 let isElementClicked = false;
 let ff = 0;
 // Обработчик нажатия кнопки мыши
-progressSlider.addEventListener('ontouchstart', function(e) {
+progressSlider.addEventListener('touchstart', function(e) {
   
   ss = e.x;
   isElementClicked = true;
@@ -61,7 +61,7 @@ progressSlider.addEventListener('ontouchstart', function(e) {
 });
 
 // Обработчик отпускания кнопки мыши
-progressSlider.addEventListener('ontouchmove', function(e) {
+progressSlider.addEventListener('touchmove', function(e) {
 
     ff = ss - e.x;
     if(ff > 100){
@@ -83,7 +83,7 @@ progressSlider.addEventListener('ontouchmove', function(e) {
 });
 
 // Обработчик передвижения мыши
-progressSlider.addEventListener('ontouchend', function(e) {
+progressSlider.addEventListener('touchend', function(e) {
  
   if(isElementClicked){
     cw = progressSlider.offsetWidth;
