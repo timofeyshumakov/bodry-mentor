@@ -1,5 +1,6 @@
 const progressCards = document.getElementsByClassName("progress-card");
 const programmCards = document.getElementsByClassName("programm-card");
+const progressSlider = document.getElementById("progressCards");
 const progressPointer = document.getElementsByClassName("progress__scroll-point");
 const programmPointer = document.getElementsByClassName("progress__scroll-point");
 let currentProgressCard = 0;
@@ -14,7 +15,6 @@ for(let i = 1; i < programmCards.length; i++){
 
 function previousProgressCard() {
     if(currentProgressCard > 0){
-        alert('e');
         progressCards[currentProgressCard].style.display = 'none';
         currentProgressCard--;
         progressCards[currentProgressCard].style.display = 'flex';
@@ -38,41 +38,26 @@ function nextProgressCard() {
         progressPointer[currentProgressCard].style.background = gold;
       }
 }
-progressCards[0].addEventListener(
-    "touchstart",
-    function () {
-      alert();
-    },
-    false,
-  );
-  progressCards[0].addEventListener(
-    "touchend",
-    function () {
-      alert();
-    },
-    false,
-  );
-
-
 // Флаг, который указывает на то, что элемент зажат
 let isElementClicked = false;
 let ff = 0;
 // Обработчик нажатия кнопки мыши
-progressCards[0].addEventListener('mousedown', function(e) {
-
+progressSlider.addEventListener('mousedown', function(e) {
+  
   ss = e.x;
   isElementClicked = true;
-  progressCards[0].style.cursor = 'grabbing';
+  progressCards[currentProgressCard].style.cursor = 'grabbing';
 });
 
 // Обработчик отпускания кнопки мыши
-progressCards[0].addEventListener('mouseup', function(e) {
+progressSlider.addEventListener('mouseup', function(e) {
+
     ff = ss - e.x;
     if(ff > 100){
         nextProgressCard();
     }else{
-        progressCards[0].style.transform = ip;
-        progressCards[1].style.transform = ip;
+        progressCards[currentProgressCard].style.transform = ip;
+        progressCards[currentProgressCard + 1].style.transform = ip;
     }
     
   isElementClicked = false;
@@ -80,10 +65,17 @@ progressCards[0].addEventListener('mouseup', function(e) {
 });
 
 // Обработчик передвижения мыши
-progressCards[0].addEventListener('mousemove', function(e) {
+progressSlider.addEventListener('mousemove', function(e) {
+ 
   if(isElementClicked){
-    progressCards[0].style.transform = `translateX(-${ss - e.x}px)`;
-    progressCards[1].style.transform = `translateX(-${ss - e.x}px)`;
+    cw = progressSlider.offsetWidth;
+    p = currentProgressCard * 100 + ((ss - e.x) / cw) * 100;
+    progressCards[currentProgressCard].style.transform = `translateX(-${p}%)`;
+    if(currentProgressCard < progressCards.length - 1){
+      progressCards[currentProgressCard + 1].style.transform = `translateX(-${p}%)`;
+    }else{
+      progressCards[0].style.transform = `translateX(${progressCards.length * 100 - p}%)`;
+    }
   }
 });
 
