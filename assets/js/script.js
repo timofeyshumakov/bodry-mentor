@@ -56,6 +56,7 @@ let ff = 0;
 progressSlider.addEventListener('touchstart', function(e) {
   
   ss = e.x;
+ss = e.touches[0].pageY;
     alert(ss);
   isElementClicked = true;
   progressCards[currentProgressCard].style.cursor = 'grabbing';
