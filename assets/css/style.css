@@ -478,7 +478,6 @@ li a:after {
     display: -ms-flexbox;
     display: flex;
     gap: 2rem;
-    z-index: 50;
 }
 
 .promo__button {
@@ -504,7 +503,6 @@ li a:after {
     width: 16.8rem !important;
     height: 4.5rem;
     gap: 1.2rem;
-    z-index: 50;
 }
 
 .promo__buttons form:nth-child(2) button {
@@ -1567,6 +1565,18 @@ button:hover:not(.scroll-button) {
     gap: 2rem;
 }
 
+.progress__cards-container {
+    max-width: 70rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress__cards {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
 .progress__card {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1580,10 +1590,22 @@ button:hover:not(.scroll-button) {
     width: 100%;
     padding: 6.3% 9.9% 6% 6%;
     border-radius: 1.25rem;
+    width: 100%;
+    -webkit-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+    width: 100%;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
 }
 
 .progress__scroll {
     margin-top: -0.6rem;
+}
+
+.activeCard {
+    -webkit-transform: translate(-100px, 100px);
+    -ms-transform: translate(-100px, 100px);
+    transform: translate(-100px, 100px);
 }
 
 .scroll-button {
@@ -2593,26 +2615,6 @@ button:hover:not(.scroll-button) {
         width: 14rem;
     }
 
-    .promo__light-left {
-        z-index: 0;
-     }
-
-    .promo__light-right {
-        z-index: 0;
-     }
-
-   .tariffs__light-right {
-        display: none;
-     }
-
-  .tariffs__light-left {
-        display: none;
-     }
-
-  .tariffs__light-center {
-        display: none;
-     }
-
     .promo__top-title-blocks {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
@@ -2715,6 +2717,26 @@ button:hover:not(.scroll-button) {
 
     .progress__scroll {
         margin-top: 0;
+    }
+
+    .promo__light-left {
+        z-index: 0;
+    }
+
+    .promo__light-right {
+        z-index: 0;
+    }
+
+    .tariffs__light-right {
+        display: none;
+    }
+
+    .tariffs__light-left {
+        display: none;
+    }
+
+    .tariffs__light-center {
+        display: none;
     }
 }
 
