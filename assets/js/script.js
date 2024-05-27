@@ -54,7 +54,7 @@ let isElementClicked = false;
 let ff = 0;
 // Обработчик нажатия кнопки мыши
 progressSlider.addEventListener('touchstart', function(e) {
-  
+  alert();
   ss = e.x;
   isElementClicked = true;
   progressCards[currentProgressCard].style.cursor = 'grabbing';
