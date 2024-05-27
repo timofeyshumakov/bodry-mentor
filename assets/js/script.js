@@ -1,5 +1,6 @@
 const progressCards = document.getElementsByClassName("progress-card");
 const programmCards = document.getElementsByClassName("programm-card");
+const progressSlider = document.getElementById("progressCards");
 const progressPointer = document.getElementsByClassName("progress__scroll-point");
 const programmPointer = document.getElementsByClassName("progress__scroll-point");
 let currentProgressCard = 0;
@@ -7,9 +8,6 @@ let currentProgrammCard = 0;
 const white = 'rgb(255, 255, 255)';
 const gold = 'rgb(255, 232, 178)';
 
-for(let i = 1; i < progressCards.length; i++){
-    progressCards[i].style.display = "none";
-}
 
 for(let i = 1; i < programmCards.length; i++){
     programmCards[i].style.display = "none";
@@ -24,16 +22,80 @@ function previousProgressCard() {
         progressPointer[currentProgressCard].style.background = gold;
       }
 }
-
+let ip = `translateX(0)`;
 function nextProgressCard() {
-    if(currentProgressCard < progressCards.length - 1){
-        progressCards[currentProgressCard].style.display = 'none';
+    if(currentProgressCard === progressCards.length - 1){
+      setTimeout(function(){
+        currentProgressCard = 0;
+        ip = `translateX(-${currentProgressCard}00%)`;
+        progressCards[currentProgressCard].style.transform = `translateX(-${currentProgressCard}00%)`;
+        progressCards[currentProgressCard + 1].style.transform = `translateX(-${currentProgressCard}00%)`;
+        progressCards[progressCards.length - 1].style.transform = `translateX(-${currentProgressCard}00%)`;
+        for(i = 0; i < progressCards.length - 1; i++){
+          progressCards[i].style.removeProperty('transform');
+        }
+    },0.05);
+    }else{
+        progressCards[currentProgressCard].style.display = 'flex';
         currentProgressCard++;
         progressCards[currentProgressCard].style.display = 'flex';
+        setTimeout(function(){
+            ip = `translateX(-${currentProgressCard}00%)`;
+            progressCards[currentProgressCard - 1].style.transform = `translateX(-${currentProgressCard}00%)`;
+            progressCards[currentProgressCard].style.transform = `translateX(-${currentProgressCard}00%)`;
+            progressCards[currentProgressCard + 1].style.transform = `translateX(-${currentProgressCard}00%)`;
+        },0.05);
         progressPointer[currentProgressCard - 1].style.background = white;
         progressPointer[currentProgressCard].style.background = gold;
-      }
+    }
 }
+// Флаг, который указывает на то, что элемент зажат
+let isElementClicked = false;
+let ff = 0;
+// Обработчик нажатия кнопки мыши
+progressSlider.addEventListener('mousedown', function(e) {
+  
+  ss = e.x;
+  isElementClicked = true;
+  progressCards[currentProgressCard].style.cursor = 'grabbing';
+});
+
+// Обработчик отпускания кнопки мыши
+progressSlider.addEventListener('mouseup', function(e) {
+
+    ff = ss - e.x;
+    if(ff > 100){
+        nextProgressCard();
+    }else if(ff > 100){
+      previousProgressCard();
+    }else{
+        progressCards[currentProgressCard].style.transform = ip;
+        if(currentProgressCard < progressCards.length - 1){
+          progressCards[currentProgressCard + 1].style.transform = ip;
+        }else{
+          progressCards[0].style.transform = ip;
+        }
+        
+    }
+    
+  isElementClicked = false;
+  progressCards[0].style.cursor = 'grab';
+});
+
+// Обработчик передвижения мыши
+progressSlider.addEventListener('mousemove', function(e) {
+ 
+  if(isElementClicked){
+    cw = progressSlider.offsetWidth;
+    p = currentProgressCard * 100 + ((ss - e.x) / cw) * 100;
+    progressCards[currentProgressCard].style.transform = `translateX(-${p}%)`;
+    if(currentProgressCard < progressCards.length - 1){
+      progressCards[currentProgressCard + 1].style.transform = `translateX(-${p}%)`;
+    }else{
+      progressCards[0].style.transform = `translateX(${progressCards.length * 100 - p}%)`;
+    }
+  }
+});
 
 function previousProgrammCard() {
   if(currentProgrammCard > 0){
