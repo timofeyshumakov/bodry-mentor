@@ -56,16 +56,19 @@ let ff = 0;
 progressSlider.addEventListener('touchstart', function(e) {
   
   ss = e.x;
-ss = e.touches[0].pageY;
-    alert(ss);
   isElementClicked = true;
   progressCards[currentProgressCard].style.cursor = 'grabbing';
 });
 
 // Обработчик отпускания кнопки мыши
-progressSlider.addEventListener('touchmove', function(e) {
-
-    ff = ss - e.x;
+progressSlider.addEventListener('touchmove mousemove', function(e) {
+  if(e.type === 'touchstart'){
+    posX = e.touches[0].x;
+  }else{
+    posX = e.x;
+  }
+  alert(posX);
+    ff = ss - posX;
     if(ff > 100){
         nextProgressCard();
     }else if(ff > 100){
