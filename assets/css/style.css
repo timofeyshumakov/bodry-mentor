@@ -135,6 +135,30 @@ section {
     position: relative;
 }
 
+.cards-container {
+    max-width: 70rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-container {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    padding: 0 0.5rem;
+    -webkit-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+}
+
+.cards {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
 .text:before {
     content: attr(data-text);
     position: absolute;
@@ -1079,10 +1103,6 @@ button:hover:not(.scroll-button) {
     justify-content: space-between;
 }
 
-.programm__cards {
-    position: relative;
-}
-
 .programm__scroll {
     margin-top: 1rem;
 }
@@ -1100,7 +1120,11 @@ button:hover:not(.scroll-button) {
     flex-direction: column;
     gap: 1.3rem;
     font-weight: 100;
-    max-width: 69.4rem;
+    width: 100%;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -webkit-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
 }
 
 .programm-card__title {
@@ -1527,10 +1551,6 @@ button:hover:not(.scroll-button) {
     cursor: pointer;
 }
 
-.scroll-point:first-child {
-    background-color: rgb(255, 232, 178);
-}
-
 .scroll-point {
     border-radius: 50%;
     background-color: #fff;
@@ -1565,18 +1585,6 @@ button:hover:not(.scroll-button) {
     gap: 2rem;
 }
 
-.progress__cards-container {
-    max-width: 70rem;
-    overflow: hidden;
-    position: relative;
-}
-
-.progress__cards {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-}
-
 .progress__card {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1587,12 +1595,8 @@ button:hover:not(.scroll-button) {
     gap: 4.5rem;
     background: -webkit-gradient(linear, left bottom, left top, from(rgb(44, 44, 44)), to(rgba(57, 57, 57, 0.95)));
     background: linear-gradient(0deg, rgb(44, 44, 44) 0%, rgba(57, 57, 57, 0.95) 100%);
-    width: 100%;
     padding: 6.3% 9.9% 6% 6%;
     border-radius: 1.25rem;
-    width: 100%;
-    -webkit-transition: all 0.5s ease 0s;
-    transition: all 0.5s ease 0s;
     width: 100%;
     -ms-flex-negative: 0;
     flex-shrink: 0;
@@ -1619,7 +1623,6 @@ button:hover:not(.scroll-button) {
 }
 
 .progress-card__img {
-    margin-left: -1.9rem;
     width: 13.5rem;
 }
 
@@ -2171,6 +2174,10 @@ button:hover:not(.scroll-button) {
 }
 
 @media screen and (max-width: 63rem) {
+    .scroll-button {
+        display: none;
+    }
+
     .types__body {
         gap: 0;
     }
