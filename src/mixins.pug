@@ -147,13 +147,19 @@ mixin exchanges-card(title, txt, bemBlock)
     div(class=`${bemBlock}` + 'title')= title
     div(class=`${bemBlock}` + 'txt')= txt
   
-mixin tariff(title,list,price,bemBlock)
+mixin tariff(title,list,price,bemBlock,i)
   -newBlock = 'tariff'
-  div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+  if i === 1
+    -mod = ' tariff-white'
+  else if i === 2
+    -mod = ' tariff-black'
+  else
+    -mod = ''
+  div(class=`${bemBlock}` + newBlock + ` ${newBlock}` + mod)
     -bemBlock = `${newBlock}__`
-    div(class=`${bemBlock}` + 'container')
     +img(`${bemBlock}` + 'light-center' + ' light', 'light/center', 'svg')
-    div(class=`${bemBlock}` + 'title') #{title} <p>наставничество</p> 
+    div(class=`${bemBlock}` + 'title-container')
+      div(class=`${bemBlock}` + 'title') #{title} <p>наставничество</p> 
     div(class=`${bemBlock}` + 'body')
       ul(class=`${bemBlock}` + 'list')
         each item in list
