@@ -1,0 +1,346 @@
+include mixins.pug
+main.main
+  -format = 'png'
+  -sectionName= 'promo'
+  section(class=`main__` + sectionName + ` ${sectionName}`)
+    -bemBlock = `${sectionName}__`
+    div(class=`${bemBlock}` + 'bg' + ' bg')
+      +img(`${bemBlock}` + 'bg-img', 'bg1', 'webp', ' ')
+    div(class=`${bemBlock}` + 'decor-txt' + ' decor-txt') битрикс24 битрикс24
+    +img(`${bemBlock}` + 'light-left' + ' light' + ' light-left', 'light/left', 'svg', ' ')
+    +img(`${bemBlock}` + 'light-right' + ' light' + ' light-right', 'light/right', 'svg', ' ')
+    -newBlock = 'container'
+    div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+      -newBlock = 'description'
+      div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+        -bemBlock = `${sectionName}__`
+        div(class=`${bemBlock}` + 'top-title-blocks') 
+          div(class=`${bemBlock}` + 'top-title-block')
+            +img(`${bemBlock}` + 'top-title-img', `promo/Медаль`, format)
+            div(class=`${bemBlock}` + 'top-title-txt') <span class="highlight">Единственная </span><span>программа <p>на рынке для веб-разработчиков</p></span>
+          div(class=`${bemBlock}` + 'top-title-block')
+            +img(`${bemBlock}` + 'top-title-img', `promo/Деньги`, format)
+            div(class=`${bemBlock}` + 'top-title-txt') <span>Научитесь продавать свою <p>работу в </span><span class="highlight">3-4 раза дороже</span></p>
+        div(class=`${bemBlock}` + 'title') Станьте веб-разработчиком на Битрикс24 и выйдите на доход 100.000+ рублей
+        div(class=`${bemBlock}` + 'sub-title') Освойте уникальную систему привлечения клиентов, с которой заказы на веб-разработку будут всегда
+        div(class=`${bemBlock}` + 'buttons')
+          form(action=`#tariffs`)
+            button(class=`${bemBlock}` + 'button' + ' justify-start')
+              +img(`${bemBlock}` + 'button-img', 'promo/Нажатие', png)
+              span(class=`${bemBlock}` + 'button-txt') Хочу на обучение
+          +linkButton(`${bemBlock}` + 'button', 'Посмотреть программу', '#programm') 
+      -newBlock = 'checks'
+      div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+        +img(`${bemBlock}` + 'main-img', `promo/1`, format)
+        div(class=`${bemBlock}` + 'checks-container')
+          +img(`${bemBlock}` + 'check','promo/Перевод-1', format)
+          +img(`${bemBlock}` + 'check','promo/Перевод-2', format)
+          +img(`${bemBlock}` + 'check','promo/Перевод-3', format)
+          +img(`${bemBlock}` + 'light-center' + ' light' + ' light-center', 'light/center', 'svg', ' ')
+        div(class=`${bemBlock}` + 'check-info')
+          div(class=`${bemBlock}` + 'check-title') Такие чеки вы будете получать
+          div(class=`${bemBlock}` + 'check-txt') через месяц после обучения
+  -sectionName= 'exchanges'
+  -bemBlock = `${sectionName}__`
+  section(class=`main__` + sectionName + ` ${sectionName}`)
+    div(class=`${bemBlock}` + 'bg' + ' bg')
+      +img(`${bemBlock}` + 'bg-img', 'bg1', 'webp', ' ')
+    -newBlock = 'container'
+    div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+      div(class=`${bemBlock}` + 'header')
+        h2(class=`${bemBlock}` + 'title' + ' title') Мы не будем работать на биржах фриланса
+        div(class=`${bemBlock}` + 'subtitle') Здесь работает 95% веб-разработчиков со всего рынка СНГ — конкуренция огромная
+      div(class=`${bemBlock}` + 'body')
+        div(class=`${bemBlock}` + 'imgs')
+          each exchange in ['Project4Life', 'Guru', 'Upwork', 'Fl', 'Freelancer', 'Fivver', 'Toptall']
+            +img(`${bemBlock}` + 'img', `exchanges/${exchange}`, format, exchange)
+          div(class=`${bemBlock}` + 'txt') Биржи — это...
+        div(class=`${bemBlock}` + 'arrows')
+          -for( i = 0; i < 4; i++){
+            +img(`${bemBlock}` + 'arrow', `arrow`, 'svg', exchange)
+          -}
+        div(class=`${bemBlock}` + 'cards')
+          each card in [['Старый формат работы', 'На биржах нормально зарабатывают только те веб-разработчики, которые давно так работают.'], ['Требовательные заказчики', 'Клиенты могут докапываться из за мелочей и требовать больше, чем вы обговаривали.'], ['Скупые клиенты', 'На биржах клиенты готовы работать с теми, кто предложит меньшую цену, придется бороться за каждый заказ.'], ['Низкий заработок', 'Чтобы выйти на доход в 100.000 рублей нужно годами собирать отзывы и нарабатывать портфолио.']]
+            +exchanges-card(card[0], card[1], bemBlock)
+  -sectionName= 'advantages'
+  -bemBlock = `${sectionName}__`
+  section(class=`main__` + sectionName + ` ${sectionName}`)
+    div(class=`${bemBlock}` + 'bg' + ' bg')
+      +img(`${bemBlock}` + 'bg-img', 'bg1', 'webp', ' ')
+    -newBlock = 'container'
+    +img(`${bemBlock}` + 'light-left' + ' light' + ' light-left', 'light/left', 'svg', ' ')
+    +img(`${bemBlock}` + 'light-right' + ' light' + ' light-right', 'light/right', 'svg', ' ')
+    +img(`${bemBlock}` + 'money', 'pngwing.com (1) копия 3', format, 'img', 'l')
+    div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+      h2(class=`${bemBlock}` + 'title' + ' title') Предлагаю освоить <p><span class='golden-highlight'>новый формат</span> работы на фрилансе</p>
+      div(class=`${bemBlock}` + 'body')
+        -i = 0
+        each card in [['Чеки в 3 раза выше, чем на биржах', 'Научитесь продавать услуги в 3 раза дороже, чем это делаю веб-разработчики на бирже. А ваш средний чек за работу обычно будет выходить в 30.000 - 40.000 рублей.'], ['Доход 100.000+ рублей в месяц', 'Это минимальный уровень, на который вы сможете выйти после обучения. Ученики, которые делают все, что я даю на программе выходят на 150.000 - 200.000 рублей.'], ['Клиенты платят и не торгуются', 'Научитесь привлекать лояльных клиентов, которые знают ценность ваших услуг. Они готов платить сразу и даже не тогроваться.'], ['Полное отсутствие конкуренции', 'Бороться за клиентов, как это делают на биржах, не придется, вы станете тем веб-разработчиком, с которым готовы работать сразу.']]
+          div(class=`${sectionName}__` + 'card' + ` ${sectionName}-card`)
+            -bemBlock = `${sectionName}-card__`
+            div(class=`${bemBlock}` + 'header')
+              +img(`${bemBlock}` + 'img', `advantages/Checked`, format, 'img', 'l')
+              if i === 2
+                div(class=`${bemBlock}` + 'title') Клиенты платят <p>и не торгуются</p>
+              else
+                div(class=`${bemBlock}` + 'title')= card[0]
+            div(class=`${bemBlock}` + 'txt')= card[1]
+          -i++
+      +linkButton(`${bemBlock}button big-button`, 'Посмотреть программу', '#programm')
+      div(class=`${bemBlock}` + 'main-img-container')
+        +img(`${bemBlock}` + 'main-img', 'advantages/2', format, 'img', 'l')
+        +img(`${bemBlock}` + 'light-center' + ' light-center', 'light/center', 'svg', ' ', 'l')
+      div(class=`${bemBlock}` + 'main-img-container')
+        +img(`${bemBlock}` + 'main-img', 'advantages/2', format, 'img', 'l')
+        +img(`${bemBlock}` + 'light-center' + ' light-center', 'light/center', 'svg', ' ', 'l')
+  -sectionName= 'platform'
+  -bemBlock = `${sectionName}__`
+  section(class=`main__` + sectionName + ` ${sectionName}`)
+    -bemBlock = `${sectionName}__`
+    div(class=`${bemBlock}` + 'decor-txt' + ' decor-txt') начало работы начало
+    -newBlock = 'container'
+    div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+      h2(class=`${bemBlock}` + 'title' + ' title') Мы будем работать с <span class='golden-highlight'>Битрикс24</span>,<p>чтобы быстро добиться результатов</p>
+      div(class=`${bemBlock}` + 'body')
+        each card in [['Ноутбук', 'Битрикс24', 'Один из самых популярных и удобных сервисов на рынке, который легко интегрировать в любой бизнес'], ['Рост_вверх', '80% клиентов', 'Просят перенести их проект именно на Битрикс24, поэтому каждому веб-разрботчику важно уметь это делать']]
+          div(class=`${sectionName}__` + 'card' + ` ${sectionName}-card`)
+            -bemBlock = `${sectionName}-card__`
+            +img(`${bemBlock}` + 'img', `platform/${card[0]}`)
+            div(class=`${bemBlock}` + 'header')
+              div(class=`${bemBlock}` + 'title' + ' title')= card[1]
+              div(class=`${bemBlock}` + 'txt')= card[2]
+  -i = 0
+  each card in [['Знаю, сейчас вы скажете:', 'Облако_1', 'Но я не умею работать с Битрикс24. Это не моя специализация...', 'Человек_1'], ['А я отвечу:', 'Облако_2', ' ', '3']]
+    if i === 0 
+      -sectionName= 'objection'
+      -object = 'Стол'
+      -bg = 'bg1'
+    else
+      -sectionName= 'answer'
+      -object = 'Стол_2'
+      -bg = 'bg3'
+    section(class=`main__` + sectionName + ` ${sectionName}`)
+      div(class=`${bemBlock}` + 'bg' + ' bg')
+        +img(`${bemBlock}` + 'bg-img', bg, 'webp', ' ')
+      -bemBlock = `${sectionName}__`
+      +img(`${bemBlock}` + 'object', object , 'png', 'Стол')
+      -newBlock = 'container'
+      div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+        div(class=`${sectionName}__` + 'card' + ` ${sectionName}-card`)
+          -bemBlock = `${sectionName}-card__`
+          h2(class=`${sectionName}__` + 'title' + ' title')= card[0]
+          div(class=`${bemBlock}` + 'container') 
+            div(class=`${bemBlock}` + 'img-container')
+              +img(`${bemBlock}` + sectionName + '-img', `objections/${card[1]}`, format)
+              if i === 0
+                div(class=`${bemBlock}` + sectionName + '-txt')= card[2]
+              else
+                div(class=`${bemBlock}` + sectionName + '-txt')
+                  div(class=`${bemBlock}` + sectionName + '-subtxt') Это нетрудно, нужно просто понять принцип работы Битрикс24.
+                  div(class=`${bemBlock}` + sectionName + '-subtxt') как только поймете, сможете выстроить очередь из клиентов. И вас будут звать во многие компании в качестве веб-разработчика в штат.
+            +img(`${bemBlock}` + 'img', `objections/${card[3]}`)
+        -i++
+  -sectionName= 'system'
+  -bemBlock = `${sectionName}__`
+  section(class=`main__` + sectionName + ` ${sectionName}` id = sectionName)
+    div(class=`${bemBlock}` + 'bg' + ' bg')
+      +img(`${bemBlock}` + 'bg-img', 'bg2', 'webp', ' ')
+    -newBlock = 'container'
+    div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+      div(class=`${bemBlock}` + 'header')
+        h2(class=`${bemBlock}` + 'title' + ' title') Клиентов искать не придется, <p><span class='golden-highlight'>они сами будут выходить на вас</p></span>
+        div(class=`${bemBlock}` + 'subtitle') Смотрите, как это происходит по конкретным шагам
+      div(class=`${bemBlock}` + 'body')
+        -i = 1
+        each card in ['Человеку нужно перенести бизнес в Битрикс24, он обращается к интегратору', 'Интегратор ищет веб-разработчика, который умеет работать с Битрикс24', 'Интегратор обращается к вами выступает в роли посредника между вами и клиентом', 'Самое интересное: вы получаетеза работу столько, сколько просите. Вам не нужно ничего продавать, интегратор сам общается с клиентом']
+          div(class=`${sectionName}__` + 'card' + ` ${sectionName}-card`)
+            -bemBlock = `${sectionName}-card__`
+            div(class=`${bemBlock}` + 'number')= i
+            div(class=`${bemBlock}` + 'txt')= card
+          -i++  
+      div(class=`${bemBlock}` + 'footer')
+        div(class=`${bemBlock}` + 'footer-txt') Если хотите стать веб-разработчиком,к которому постоянно обращаются за услугами, приходите на программу
+        +linkButton(`${bemBlock}` + 'footer-button' + ' big-button', 'Посмотреть программу', '#programm')
+  -sectionName= 'progress'
+  section(class=`main__` + sectionName + ` ${sectionName}` id = sectionName)
+    -bemBlock = `${sectionName}__`
+    -newBlock = 'container'
+    div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+      h2(class=`${bemBlock}` + 'title' + ' title') По моей системе веб-разработчики <p><span class='golden-highlight'>выходят на 100.000+</span> рублей в месяц</p>
+      div(class=`${bemBlock}` + 'body' + ` ${sectionName}-body`)
+        button(class=`${bemBlock}` + 'scroll-button' + ' scroll-button' onclick="previousProgressCard();")
+          +img(`${bemBlock}` + 'scroll-arrow' + ' scroll-arrow', 'scroll-arrow','svg')
+        div(class=`${bemBlock}` + 'cards-container cards-container')
+          div(class=`${bemBlock}` + 'cards cards' id = `${sectionName}Cards`)
+            -for (i = 0; i < 5; i++){
+            -bemBlock = `${sectionName}__`
+              div(class=`${bemBlock}` + 'card-container' + ` card-container`)
+                div(class=`${bemBlock}` + 'card' + ` ${sectionName}-card`)
+                  -bemBlock = `${sectionName}-card__`
+                  +img(`${bemBlock}` + 'img', 'Слой 16', 'png', 'img', 'l')
+                  div(class=`${bemBlock}` + 'descr')
+                    -title= `Артем, 2${i+3} года`
+                    div(class=`${bemBlock}` + 'title')= title
+                    div(class=`${bemBlock}` + 'subtitles')
+                      div(class=`${bemBlock}` + 'subtitle') <span class='golden-highlight'>Точка а:</span> 25.000 руб.
+                      div(class=`${bemBlock}` + 'subtitle') <span class='golden-highlight'>Точка б:</span> 124.700 руб.
+                    div(class=`${bemBlock}` + 'txt') Товарищи! дальнейшее развитие различных форм деятельности играет важную роль в формировании существенных финансовых и административных условий. Задача организации, в особенности же рамки и место обучения кадров влечет за собой процесс внедрения.
+            -}
+            -bemBlock = `${sectionName}__`
+        button(class=`${bemBlock}` + 'scroll-button' + ' scroll-button' onclick="nextProgressCard();")
+          img(class=`${bemBlock}` + 'scroll-arrow' + ' scroll-arrow' src='assets/img/scroll-arrow.svg' id='rotate')
+      div(class=`${bemBlock}` + 'scroll' + ' scroll' id="progressScroll")
+        -for( i = 0; i < 5; i++){
+          div(class=`${bemBlock}` + 'scroll-point' + ' scroll-point')
+        -}
+  -sectionName= 'types'
+  -bemBlock = `${sectionName}__`
+  section(class=`main__` + sectionName + ` ${sectionName}`)
+    div(class=`${bemBlock}` + 'bg' + ' bg')
+      +img(`${bemBlock}` + 'bg-img', 'bg1', 'webp', ' ')
+    +img(`${bemBlock}` + 'money', 'pngwing.com (1) копия 4', format, 'img', 'l')
+    -newBlock = 'container'
+    div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+      h2(class=`${bemBlock}` + 'title' + ' title') Выберите, каким веб-разработчиком <span class='golden-highlight'>хотите быть</span>
+      div(class=`${bemBlock}` + 'body')
+        -i = 0
+        each card in [['Уставший_фрилансер', '#1: работает на бирже', ['Зарабатывает 50.000 рублей', 'Борется за каждый заказ', 'Работает по 8 часов в день', 'Клиенты капают на мозги', 'Ездит в отпуск 1 раз  в год', 'Зависит от работы', 'Не понимает, как поднять доход', 'Мало свободного времени']],['Фрилансер_новый_формат', '#2: работает по новому формату', ['Зарабатывает 100.000 рублей', 'Клиенты приходят сами', 'Работает по 4 часа в день', 'Ездит в отпуск раз в 3 масяца', 'Много времени на личную жизнь', 'Знает, как вырасти до 200.000 рублей', 'Планирует нанять помощников']]]
+          -newBlock = 'types-card'
+          div(class=`types__card ${newBlock}`)
+            -bemBlock = `${newBlock}__`
+            +img(`${bemBlock}` + 'img', `types/${card[0]}`, 'jpg', 'img', 'l')
+            div(class=`${bemBlock}` + 'descr-container')
+              +img(`${bemBlock}` + 'light-center' + ' light-center', 'light/center', 'svg', ' ', 'l')
+              div(class=`${bemBlock}` + 'descr')
+                div(class=`${bemBlock}` + 'title')= card[1]
+                ul(class=`${bemBlock}` + 'list')
+                  each item in card[2]
+                    li(class=`${bemBlock}` + 'list-item')
+                      if i === 1
+                        img(class=`${bemBlock}list-decor` src=`assets/img/types/Галочка.svg`)
+                      else
+                        img(class=`${bemBlock}list-decor` src=`assets/img/types/Крестик.svg`)
+                      span(class=`${bemBlock}` + 'list-txt')= item
+              if i === 1
+                +linkButton(`${bemBlock}` + 'footer-button' + ' default-button', 'Посмотреть программу', '#programm')
+          -i++
+  -sectionName= 'reviews'
+  section(class=`main__` + sectionName + ` ${sectionName}`)
+    -bemBlock = `${sectionName}__`
+    -newBlock = 'container'
+    div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+      h2(class=`${bemBlock}` + 'title' + ' title') <span class='golden-highlight'>Такие сообщения</span> получаю <p>я и мои ученики от клиентов</p>
+      div(class=`${bemBlock}` + 'body')
+        div(class=`${bemBlock}` + 'column')
+          +img(`${bemBlock}` + 'img', `reviews/review1`, format, 'review', 'l')
+          +img(`${bemBlock}` + 'img', `reviews/review2`, format, 'review', 'l')
+        div(class=`${bemBlock}` + 'column')
+          +img(`${bemBlock}` + 'img', `reviews/review3`, format, 'review', 'l')
+          +img(`${bemBlock}` + 'img', `reviews/review4`, format, 'review', 'l')
+        div(class=`${bemBlock}` + 'column')
+          +img(`${bemBlock}` + 'img', `reviews/review5`, format, 'review', 'l')
+      +linkButton(`${bemBlock}` + 'button' + ' default-button', 'Хочу также', '#programm')
+  -sectionName= 'versatility'
+  -bemBlock = `${sectionName}__`
+  section(class=`main__` + sectionName + ` ${sectionName}`)
+    div(class=`${bemBlock}` + 'bg' + ' bg')
+      +img(`${bemBlock}` + 'bg-img', 'bg1', 'webp', ' ')
+    -newBlock = 'container'
+    div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+      h2(class=`${bemBlock}` + 'title' + ' title') <span class='opacity'> Обучение подойдет</span> <span class='golden-highlight'>всем веб-разработчикам</span>
+      div(class=`${bemBlock}` + 'body')
+        -newBlock = ` ${sectionName}`
+        div(class=`${bemBlock}` + 'card' + ` ${sectionName}-card`)
+          -bemBlock = ` ${sectionName}-card`
+          +img(`${bemBlock}` + '__img', `versatility/Круг_1`, format, 'Иллюстрация', 'l')
+          div(class=`${bemBlock}` + '__txt') Хотите работать с клиентами, которые <span class='highlight'>ценят вашу работу </span><p>и готовы хорошо платить</p>
+        div(class=`${sectionName}__` + 'card' + bemBlock)
+          +img(`${bemBlock}` + '__img', `versatility/Круг_2`, format, 'Иллюстрация', 'l')
+          div(class=`${bemBlock}` + '__txt') Хотите стать тем самым фрилансером, который <span class='highlight'>путешествует по миру</span>
+        div(class=`${sectionName}__` + 'card' + bemBlock)
+          +img(`${bemBlock}` + '__img', `versatility/Круг_3`, format, 'Иллюстрация', 'l')
+          div(class=`${bemBlock}` + '__txt') Хотите уйти из найма, <p>выйти на фриланс и получать </p><span class='highlight'>от 100.000 рублей</span>
+  -sectionName= 'presentation'
+  section(class=`main__` + sectionName + ` ${sectionName}`)
+    -bemBlock = `${sectionName}__`
+    +img(`${bemBlock}` + 'light-left' + ' light' + ' light-left', 'light/left', 'svg', ' ')
+    +img(`${bemBlock}` + 'light-right' + ' light' + ' light-right', 'light/right', 'svg', ' ')
+    div(class=`${bemBlock}` + 'decor-txt' + ' decor-txt') МЕНЯ ЗОВУТ РОМАН БОДРЫЙ
+    -newBlock = 'container'
+    div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+      div(class=`${bemBlock}` + 'img-container')
+        +img(`${bemBlock}` + 'main-img', 'presentation/4', format, 'img', 'l')
+        +img(`${bemBlock}` + 'money', 'pngwing.com (1) копия 5', format, 'img', 'l')
+        +img(`${bemBlock}` + 'light-center' + ' light' + ' light-center', 'light/center', 'svg', '', 'l')
+        -newBlock = 'block'
+        div(class=`${bemBlock}` + 'block' + ' block')
+          -bemBlock = `${newBlock}__`
+          div(class=`${bemBlock}` + 'txt-container')
+            div(class=`${bemBlock}` + 'title') Роман Бодрый
+            div(class=`${bemBlock}` + 'txt') Веб-разработчик, фрилансер: создал уникальную систему привлечения клиентов для веб-разработчиков
+      -bemBlock = `${sectionName}__`
+      div(class=`${bemBlock}` + 'txt')
+        h2(class=`${bemBlock}` + 'title' + ' title') Меня зовут <p><span class='golden-highlight'>Роман Бодрый</span></p>
+        ul(class=`${bemBlock}` + 'list')
+          each item in ['10 лет занимаюсь коммерческой веб-разработкой', 'В 2019 году вышел на фриланс: как и все начал пробовать искать заказы на бирже', 'Не смог работать на биржах и разработал собственную систему поиска клиентов', 'Вышел на доход 300.000 рублей при помощи своей системы', 'Обучаю веб-разработчиков работать дорого и не нуждаться в клиентах', 'Каждые полгода путешествую и посещаю новые страны']
+            li(class=`${bemBlock}` + 'list-item')= '— ' + item 
+  -sectionName= 'programm'
+  section(class=`main__` + sectionName + ` ${sectionName}` id = sectionName)
+    -bemBlock = `${sectionName}__`
+    -newBlock = 'container'
+    div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+      h2(class=`${bemBlock}` + 'title' + ' title') Программа обучения
+      div(class=`${bemBlock}` + 'body')
+        button(class=`${bemBlock}` + 'scroll-button' + ' scroll-button' onclick="previousProgrammCard();")
+          +img(`${bemBlock}` + 'scroll-arrow' + ' scroll-arrow', 'scroll-arrow','svg')
+        div(class=`${bemBlock}` + 'cards-container cards-container')
+          div(class=`${bemBlock}` + 'cards cards' id = `${sectionName}Cards`)
+            each card in ['Модуль 1: разбор технологии', 'Модуль 2: разбор технологии', 'Модуль 3: разбор технологии', 'Модуль 4: разбор технологии', 'Модуль 5: разбор технологии']
+              div(class=`${bemBlock}` + 'card-container card-container')
+                div(class=`${bemBlock}` + 'card' + ` ${sectionName}-card`)
+                  -bemBlock = `${sectionName}-card__`
+                  div(class=`${bemBlock}` + 'title')= card
+                  ul(class=`${bemBlock}` + 'list')
+                    each item in [['Раскрою все секреты техники и по шагам покажу, где и как с ее помощью искать клиентов', 'Раскрою все секреты техники и по шагам покажу, где и как с ее помощью искать клиентов'], ['Где сидят клиенты, которые готовы заплатить вам ту цену, которую вы назовете', 'Где сидят клиенты, которые готовы заплатить вам ту цену, которую вы назовете'], ['Как сделать так, чтобы клиенты сами к вам приходили', 'Как сделать так, чтобы клиенты сами к вам приходили'], ['Как общаться с клиентами так, чтобы они легко покупали ваши услуги', 'Как общаться с клиентами так, чтобы они легко покупали ваши услуги']]
+                      li
+                        details
+                          summary #{item[0]}
+                          p #{item[1]}
+                  div(class=`${bemBlock}` + 'txt') Это самое важное, ради чего мы соберемся. Ведь больше никто не обучает на рынке подобной технологии поиска клиентов на веб-разработку.
+                  -bemBlock = `${sectionName}__`
+        button(class=`${bemBlock}` + 'scroll-button' + ' scroll-button' onclick="nextProgrammCard();")
+          img(class=`${bemBlock}` + 'scroll-arrow' + ' scroll-arrow' src='assets/img/scroll-arrow.svg' id='rotate')
+      -bemBlock = `${sectionName}__`
+      div(class=`${bemBlock}` + 'scroll' + ' scroll' id="programmScroll")
+        -for( i = 0; i < 5; i++){
+          div(class=`${bemBlock}` + 'scroll-point' + ' scroll-point')
+        -}
+  -sectionName= 'tariffs'
+  -bemBlock = `${sectionName}__`
+  section(class=`main__` + sectionName + ` ${sectionName}` id = sectionName)
+    div(class=`${bemBlock}` + 'bg' + ' bg')
+      +img(`${bemBlock}` + 'bg-img', 'bg1', 'webp', ' ')
+    +img(`${bemBlock}` + 'light-left' + ' light' + ' light-left', 'light/left', 'svg', ' ')
+    +img(`${bemBlock}` + 'light-right' + ' light' + ' light-right', 'light/right', 'svg', ' ')
+    -newBlock = 'container'
+    div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+      h2(class=`${bemBlock}` + 'title' + ' title') Выберите, какой <span class='golden-highlight'>тариф</span> больше подходит
+      div(class=`${bemBlock}` + 'body')
+        -i = 0
+        each tariff in [['Групповое', ['Работа со мной в небольшой группе до 10 человек', 'Созвон 2 раза в неделю', 'Обратная свазь от Романа Бодрого', 'Доступ к Telegram-чату группы'], ['30000', '45990']], ['Индивидуальное', ['Работа индивидуально с Романом Бодрым 1 на 1', 'Созвон 2 раза в неделю', 'Доведение до результата', 'Доступ к Telegram-чату группы', 'Доступ к записанным созвонам из групового наставничества'], ['69.500', '99.990']], ['Индивидуальное', ['Работа индивидуально с Романом Бодрым 1 на 1', 'Созвон 2 раза в неделю', 'Доведение до результата', 'Доступ к Telegram-чату группы', 'Доступ к записанным созвонам из групового наставничества'], ['69.500', '99.990']]]
+          +tariff(tariff[0], tariff[1], tariff[2], bemBlock,i)
+          -i++
+  -sectionName= 'installment'
+  section(class=`main__` + sectionName + ` ${sectionName}`)
+    -bemBlock = `${sectionName}__`
+    -newBlock = 'container'
+    div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+      div(class=`${bemBlock}` + 'descr')
+        div(class=`${bemBlock}` + 'title' + ' title') Обучайтесь сейчас, платите потом
+        div(class=`${bemBlock}` + 'txt') Вы можете оформить беспроцентную рассрочку и оплатить первый взнос через 1 месяц — за это время ученики обычно берут в работу проекты
+        div(class=`${bemBlock}` + 'subtxt') Рассрочку можно оформить сроком<p><span class="highlight">на 6 или 12 месяцев. 0% переплат</span></p>
+        +linkButton(`${bemBlock}` + 'button' + ' default-button', 'Оформить рассрочку', '#')
+      div(class=`${bemBlock}` + 'banks')
+        +img(`${bemBlock}` + 'decor', `circles`, 'svg', 'bank', 'l')
+        each bank in ['Тинькофф', 'Сбербанк', 'Альфа-банк' , 'ВТБ']
+          +img(`${bemBlock}` + 'bank', `banks/${bank}`, format, bank, 'l')
