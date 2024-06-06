@@ -532,10 +532,14 @@ li a:after {
 }
 
 .promo__buttons form:nth-child(2) button {
-    background: -webkit-gradient(linear, left bottom, left top, from(rgb(122, 184, 194)), color-stop(50%, rgb(185, 209, 213)), to(rgb(122, 184, 194)));
-    background: linear-gradient(0deg, rgb(122, 184, 194) 0%, rgb(185, 209, 213) 50%, rgb(122, 184, 194) 100%);
-    -webkit-box-shadow: 0 0.5rem 0 0 rgb(89, 129, 146);
-    box-shadow: 0 0.5rem 0 0 rgb(89, 129, 146);
+    color: white;
+    background-image: -webkit-gradient(linear, left top, right top, from(#9EEFE1), color-stop(51%, #4830F0), to(#9EEFE1));
+    background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+    background-size: 200% auto;
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
 }
 
 .promo__buttons form:nth-child(2) button:hover {
@@ -886,8 +890,8 @@ li a:after {
 button:not(.scroll-button) {
     font-weight: bold;
     border-radius: 0.3rem;
-    background-image: -webkit-gradient(linear, left bottom, left top, from(rgb(255, 218, 131)), color-stop(50%, rgb(255, 232, 178)), to(rgb(255, 218, 131)));
-    background-image: linear-gradient(0deg, rgb(255, 218, 131) 0%, rgb(255, 232, 178) 50%, rgb(255, 218, 131) 100%);
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(1%, rgb(255, 218, 130)), color-stop(8%, rgb(255, 232, 178)), color-stop(50%, rgba(255, 218, 126, 0.9)), color-stop(92%, rgb(255, 232, 178)), color-stop(99%, rgb(255, 218, 131)));
+    background-image: linear-gradient(to left, rgb(255, 218, 130) 1%, rgb(255, 232, 178) 8%, rgba(255, 218, 126, 0.9) 50%, rgb(255, 232, 178) 92%, rgb(255, 218, 131) 99%);
     -webkit-box-shadow: 0 0.5rem 0 0 rgb(218, 172, 106);
     box-shadow: 0 0.5rem 0 0 rgb(218, 172, 106);
 }
@@ -922,7 +926,6 @@ button:hover:not(.scroll-button) {
     -ms-flex-pack: center;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
-    grid-template-rows: repeat(3, 1fr);
     grid-gap: 2rem;
     width: 100%;
 }
