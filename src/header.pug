@@ -1,0 +1,18 @@
+include mixins.pug
+-sectionName= 'header'
+-bemBlock = `${sectionName}__`
+header(class=`${sectionName}` id="header")
+  -newBlock = 'container'
+  div(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+    div(class=`${bemBlock}` + 'logo') Роман Бодрый
+    -newBlock = 'menu'
+    nav(class=`${bemBlock}` + newBlock + ` ${newBlock}`)
+      -bemBlock = `${newBlock}__`
+      -menuLinks = ['Описание системы', 'Кейсы', 'Программа', 'Тарифы']
+      -hrefs = ['system', 'progress', 'programm', 'tariffs']
+      -i = 0
+      ul(class=`${bemBlock}` + 'list')
+        each link in menuLinks
+          li(class=`${bemBlock}` + 'item')
+            a(class=`${bemBlock}` + 'link')(href= '#' + hrefs[i])= link
+          -i++
